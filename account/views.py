@@ -38,9 +38,13 @@ class LoginView(APIView):
 
             #access_token 발급해둔 거 가져오기
             access_token = serializer.validated_data['access_token']
+            team = serializer.validated_data['team']
+            part = serializer.validated_data['part']
 
             response = Response({
                 "user_id": user_id,
+                "team": team,
+                "part": part,
                 "token":{
                     "access_token": access_token.__str__(),
                  }},
@@ -97,34 +101,3 @@ class AuthView(APIView):
             #access_token 유효하지 않음
             return Response({"message": "유효하지 않은 access token"}, status=status.HTTP_401_UNAUTHORIZED)
 
-        except jwt.exceptions.ExpiredSignatureError:
-            # access_token 만료 기간 다 됨
-            refresh_token = request.COOKIES.get('refresh_token')
-
-            #refresh_token이 없다면 에러 발생
-            if not refresh_token:
-                return Response({"message": "refresh token 없음"}, status=status.HTTP_401_UNAUTHORIZED)
-
-            try:
-                #refresh_token 디코딩
-                payload = jwt.decode(refresh_token, REFRESH_TOKEN_SECRET_KEY, algorithms=['HS256'])
-                user_id = payload.get('user_id')
-                user = get_object_or_404(id=user_id)
-
-                #새로운 access_token 발급
-                access_token = jwt.encode({"user_id": user.pk}, SECRET_KEY, algorithm=['HS256'])
-
-                #access_token을 쿠키에 저장하여 프론트로 전송
-                response = Response(UserSerializer(instance=user).data, status=status.HTTP_200_OK)
-                response.set_cookie(key='access_token', value=access_token, httponly=True, samesite='None', secure=True)
-
-                return response
-
-            # refresh_token 예외 처리
-            except jwt.exceptions.InvalidSignatureError:
-                # refresh_token 유효하지 않음
-                return Response({"message": "유효하지 않은 refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
-
-            except jwt.exceptions.ExpiredSignatureError:
-                # refresh_token 만료 기간 다 됨 => 이경우에는, 사용자가 로그아웃 후 재로그인하도록 유인 => 리다이렉트
-                return Response({"message": "refresh token 기간 만료"}, status=status.HTTP_401_UNAUTHORIZED)
