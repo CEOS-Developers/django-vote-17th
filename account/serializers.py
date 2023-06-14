@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .models import *
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -49,8 +50,6 @@ class SignUpSerializer(serializers.ModelSerializer):
         max_length=20
     )
 
-
-
     class Meta:
         model = User
         fields = ('user_id','password','email','part','name','team')
@@ -71,7 +70,6 @@ class SignUpSerializer(serializers.ModelSerializer):
       return user
 
 
-
 class LoginSerializer(serializers.ModelSerializer):
     user_id = serializers.CharField(
         required=True,
@@ -87,8 +85,6 @@ class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['user_id', 'password']
-
-
 
     def validate(self, data):
         user_id = data.get('user_id', None)
