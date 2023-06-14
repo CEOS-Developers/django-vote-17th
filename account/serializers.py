@@ -3,10 +3,12 @@ from django.contrib.auth.models import User
 from .models import *
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 class SchoolSerializer(serializers.ModelSerializer):
     class Meta:
         model = School #사용할 모델
         fields = '__all__' #사용할 모델의 필드
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -45,8 +47,6 @@ class SignUpSerializer(serializers.ModelSerializer):
         max_length=255
     )
 
-
-
     class Meta:
         model = User
         fields = ('user_id','email','password','nickname')
@@ -73,7 +73,6 @@ class SignUpSerializer(serializers.ModelSerializer):
       return user
 
 
-
 class LoginSerializer(serializers.ModelSerializer):
     user_id = serializers.CharField(
         required=True,
@@ -89,8 +88,6 @@ class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['user_id', 'password']
-
-
 
     def validate(self, data):
         user_id = data.get('user_id', None)
