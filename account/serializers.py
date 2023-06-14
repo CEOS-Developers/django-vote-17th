@@ -3,11 +3,6 @@ from django.contrib.auth.models import User
 from .models import *
 from rest_framework_simplejwt.tokens import RefreshToken
 
-class SchoolSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = School #사용할 모델
-        fields = '__all__' #사용할 모델의 필드
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -20,11 +15,10 @@ class UserSerializer(serializers.ModelSerializer):
 class SignUpSerializer(serializers.ModelSerializer):
 
     #추가옵션
-
     user_id = serializers.CharField(
         required=True,
         write_only=True,
-        max_length=30
+        max_length=20
     )
 
     password = serializers.CharField(
@@ -36,38 +30,42 @@ class SignUpSerializer(serializers.ModelSerializer):
     email = serializers.CharField(
         required=True,
         write_only=True,
-        max_length=255
+        max_length=50
     )
-
-    nickname = serializers.CharField(
+    part = serializers.CharField(
         required=True,
         write_only=True,
-        max_length=255
+        max_length=20
+    )
+
+    name = serializers.CharField(
+        required=True,
+        write_only=True,
+        max_length=20
+    )
+    team = serializers.CharField(
+        required=True,
+        write_only=True,
+        max_length=20
     )
 
 
 
     class Meta:
         model = User
-        fields = ('user_id','email','password','nickname')
-
-    # def validate(self, data):
-    #     user_id = data.get('user_id', None)
-    #
-    #     # 이미 존재하는 계정인지 확인
-    #     if User.objects.filter(user_id=user_id).exists():
-    #         raise serializers.ValidationError("User already exists")
-    #     return data
+        fields = ('user_id','password','email','part','name','team')
 
 
     #데이터베이스에 저장
     def save(self, request):
-      print("1")
+      #print("1")
       user = User.objects.create_user(
-          email=self.validated_data['email'],
           user_id=self.validated_data['user_id'],
           password=self.validated_data['password'],
-          nickname=self.validated_data['nickname']
+          email=self.validated_data['email'],
+          part=self.validated_data['part'],
+          name=self.validated_data['name'],
+          team=self.validated_data['team']
       )
       user.save()
       return user
@@ -100,21 +98,18 @@ class LoginSerializer(serializers.ModelSerializer):
             user = User.objects.get(user_id=user_id)
 
             if not user.check_password(password):
-                raise serializers.ValidationError("wrong password")
+                raise serializers.ValidationError("비밀번호가 틀렸습니다.")
         else:
-            raise serializers.ValidationError("user account not exist")
+            raise serializers.ValidationError("존재하지 않는 계정입니다.")
 
-        #유저가 존재하고, 아이디와 비밀번호가 일치한다면 RefreshToken.for_user를 이용해
-        #user객체로부터 refresh token과 access token 생성
+        #user객체로부터 access_token 생성
         token = RefreshToken.for_user(user)
-        refresh_token = str(token)
         access_token = str(token.access_token)
 
         data = {
-            'user_id':user_id,
+            'user_id': user_id,
             'user': user,
             'access_token': access_token,
-            'refresh_token': refresh_token,
         }
 
         return data

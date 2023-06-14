@@ -3,24 +3,23 @@ from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import UserSerializer,SignUpSerializer,LoginSerializer
 from django_vote_17th.settings import SECRET_KEY, REFRESH_TOKEN_SECRET_KEY
 from .models import User
 
-# cotroller 작업
 
-#회원가입
 class SignupView(APIView):
-    def post(self, request): #프론트에서 올린 데이터(request)
+    def post(self, request):
         serializer = SignUpSerializer(data=request.data)
-        #입력된 데이터가 유효하다면,에러발생X
         if serializer.is_valid(raise_exception=False):
             user = serializer.save(request)
             response = Response(
                 {
                     "user_id": user.user_id,
-                    "message": "회원가입 성공",
+                    "email": user.email,
+                    "part":user.part,
+                    "name":user.name,
+                    "team":user.team,
                 },
                 status=status.HTTP_200_OK,
             )
@@ -29,62 +28,44 @@ class SignupView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-#로그인
-#post요청을 받으면 LoginSerializer를 이용해 데이터를 검증하고, 유효한 데이터의 경우
-#유저 인증 후 access token을 LoginSerializer에서 가져와 response를 반환
-
 
 class LoginView(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid(raise_exception=False):
             #유효성 검사를 통과한 경우 토큰 확인
-            #serializer.validated_data는 프론트에서 전송한 request.data에서 추출됨
             user_id=serializer.validated_data.get("user_id")
 
-            # jwt token(refresh(장기), access(단기) 발급한걸 가져옴
+            #access_token 발급해둔 거 가져오기
             access_token = serializer.validated_data['access_token']
-            refresh_token = serializer.validated_data['refresh_token']
-
 
             response = Response({
                 "user_id": user_id,
-                "message": "로그인 성공",
                 "token":{
-                "access_token": access_token.__str__(),
-                "refresh_token": refresh_token.__str__(),
+                    "access_token": access_token.__str__(),
                  }},
-                status=status.HTTP_200_OK, )
+                status=status.HTTP_200_OK,
+            )
 
             #쿠키에 삽입 후 프론트로 전달
             response.set_cookie("access_token", access_token.__str__(), httponly=True, secure=True,
-                                max_age=60 * 60 * 24)  # 쿠키 만료 시간을 1시간으로 설정
-            response.set_cookie("refresh_token", access_token.__str__(), httponly=True, secure=True,
-                                max_age=60 * 60 * 24)  # 쿠키 만료 시간을 24시간으로 설정
+                                max_age=60 * 60 * 3)  #만료 3시간
+
             return response
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# 로그 아웃
+
 class LogoutView(APIView):
 
     #로그아웃시 jwt토큰 삭제
     def post(self, request):
         response = Response(status=status.HTTP_204_NO_CONTENT)
         response.delete_cookie('access_token')
-        response.delete_cookie('refresh_token')
         return response
 
-#jwt의 구조
-# 1.header: 토큰 타입(JWT)와 알고리즘(HS256) 저장
-# 2.payload: 사용자 또는 토큰 속성 정보(생성,만료,대상자) 저장
-# 3.signature: 비밀키
 
-#토큰인가
-#프론트에서 axios-get header에 access_token을 담아 보낸 경우
-#이를 인코딩하여 해당 유저의 정보를 반환
 
-#고객정보
 class AuthView(APIView):
     def get(self, request):
         #access token을 프론트가 보낸 request에서 추출
