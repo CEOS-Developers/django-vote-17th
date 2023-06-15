@@ -36,12 +36,14 @@ class Candidate(CommonInfo):
 
 
 class CandidateVote(CommonInfo):
-    user_id = models.ForeignKey(User,
-                               on_delete=models.CASCADE,
-                               related_name="CandidateVoteUserPk") #투표자
+    # user_id = models.ForeignKey(User,
+    #                            on_delete=models.CASCADE,
+    #                            related_name="CandidateVoteUserPk") #투표자
     candidate = models.ForeignKey(Candidate,
                                   on_delete=models.CASCADE,
                                   related_name="CandidateVoteCandidatePk") #후보자 선택
+
+    user_name = models.CharField("투표자이름", max_length=20, default='ceos')  # 투표자 이름
 
     def __str__(self):
         return "CandidateVote"

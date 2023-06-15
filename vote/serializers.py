@@ -32,4 +32,4 @@ class CandidateSerializer(serializers.ModelSerializer):
 class CandidateVoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = CandidateVote
-        fields = ['user_id','candidate']
+        fields = ['candidate', 'user_name']  # user_name 추가
