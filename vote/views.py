@@ -48,7 +48,7 @@ class CandidateVoteView(APIView):
                 candidate.vote_cnt += 1  # 파트장 투표
                 candidate.save()
                 response_data = {
-                        "user_id": vote.user_id_id,  # 수정
+                        "user_name": vote.user_name,  # 수정
                         "candidate": vote.candidate_id , # 파트장 이름
                         "candidate_cnt": candidate.vote_cnt
                 }
