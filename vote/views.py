@@ -39,22 +39,23 @@ class TeamVoteView(APIView):
 
 class CandidateVoteView(APIView):
     def post(self, request):
-        serializer = CandidateVoteSerializer(data=request.data)
+        serializer = CandidateVoteSerializer(data=request.data)  # fields = ['user_id','candidate']
         if serializer.is_valid(raise_exception=False):
-            vote = serializer.save(request)  # 투표해서 저장
-            name = serializer.validated_data.get("name")  # 투표한 파트장 가져옴
-            if Candidate.object.filter(name=name).exists():  # 데베에 해당 파트장이 있다면
-                candidate = Candidate.objects.get(name=name)  # 후킹팀에
-                vote_cnt=candidate.vote_cnt  # 파트장 투표
-                vote_cnt += 1
+            vote = serializer.save()  # 투표해서 저장
+            candidate_name = serializer.validated_data.get("candidate")  # 투표한 파트장후보 가져옴
+            try:
+                candidate = Candidate.objects.get(name=candidate_name)
+                candidate.vote_cnt += 1  # 파트장 투표
                 candidate.save()
-            response = Response(
-                {
-                    "user_id": vote.user_id,
-                    "candidate":vote.candidate
-                },
-                status=status.HTTP_200_OK,
-            )
-            return response
-
+                response_data = {
+                        "user_id": vote.user_id_id,  # 수정
+                        "candidate": vote.candidate_id , # 파트장 이름
+                        "candidate_cnt": candidate.vote_cnt
+                }
+                return Response(response_data, status=status.HTTP_200_OK)
+            except Candidate.DoesNotExist:
+                response_data = {
+                        "error" : f"The candidate '{candidate_name}' does not exist."
+                }
+                return Response(response_data, status=status.HTTP_404_NOT_FOUND)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
