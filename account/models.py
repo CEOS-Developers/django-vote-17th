@@ -56,10 +56,10 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     # DB에 저장할 데이터
-    user_id = models.CharField("아이디", max_length=20, unique=True)
+    name = models.CharField("이름", max_length=20, unique=True)
+    user_id = models.CharField("ID", max_length=20, unique=True)
     email = models.EmailField("이메일", max_length=50, unique=True)
     part = models.CharField("파트", max_length=20)
-    name = models.CharField("이름", max_length=20)
     team = models.CharField("팀", max_length=20)
 
     # 활성화 여부 (기본값은 True) => 필수 설정
