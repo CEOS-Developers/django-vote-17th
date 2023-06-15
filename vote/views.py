@@ -4,7 +4,7 @@ from account.models import *
 from vote.models import *
 from rest_framework.response import Response
 
-from vote.serializers import TeamVoteSerializer, CandidateVoteSerializer, TeamSerializer
+from vote.serializers import *
 
 
 from rest_framework.views import APIView
@@ -14,6 +14,11 @@ from .models import Team
 
 
 class TeamVoteView(APIView):
+    def get(self, request):
+        team_list = Team.objects.all().order_by('-vote_cnt').values()
+        serializer = TeamSerializer(team_list, many=True)
+        return Response(serializer.data)
+
     def post(self, request):
         serializer = TeamVoteSerializer(data=request.data)
         if serializer.is_valid(raise_exception=False):
@@ -38,8 +43,19 @@ class TeamVoteView(APIView):
 
 
 class CandidateVoteView(APIView):
-    def post(self, request):
+    # def get(self, request, part):
+    #     candidates = Candidate.objects.filter(part=part).order_by('-vote_num')
+    #     serializer = CandidateSerializer(candidates, many=True)
+    #     return Response(serializer.data)
+
+    def get(self, request, part):
+        candidate_list = Candidate.objects.filter(part=part).order_by('-vote_cnt')
+        serializer = CandidateSerializer(candidate_list, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, part): # 다른 파트는 투표할 수 없음 구현
         serializer = CandidateVoteSerializer(data=request.data)  # fields = ['user_id','candidate']
+
         if serializer.is_valid(raise_exception=False):
             vote = serializer.save()  # 투표해서 저장
             candidate_name = serializer.validated_data.get("candidate")  # 투표한 파트장후보 가져옴
