@@ -12,7 +12,7 @@ class TeamSerializer(serializers.ModelSerializer):
 class TeamVoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = TeamVote
-        fields = [ 'team','user_name'] # user_name 추가
+        fields = ['team', 'user_name']  # user_name 추가
 
     # def save(self,request):
     #     team = Team.objects.create_user(
