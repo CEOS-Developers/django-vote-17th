@@ -56,11 +56,13 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     # DB에 저장할 데이터
-    name = models.CharField("이름", max_length=20, unique=True)
-    user_id = models.CharField("ID", max_length=20, unique=True)
+    user_id = models.CharField("아이디", max_length=20, unique=True)
     email = models.EmailField("이메일", max_length=50, unique=True)
     part = models.CharField("파트", max_length=20)
+    name = models.CharField("이름", max_length=20)
     team = models.CharField("팀", max_length=20)
+    is_teamvote = models.BooleanField("팀투표 여부", default=False)
+    is_partvote = models.BooleanField("파트장투표 여부", default=False)
 
     # 활성화 여부 (기본값은 True) => 필수 설정
     is_active = models.BooleanField(default=True)
@@ -78,5 +80,3 @@ class User(AbstractBaseUser):
 
     def __str__(self):
         return f"{self.user_id} / {self.email}님의 계정입니다"
-
-
