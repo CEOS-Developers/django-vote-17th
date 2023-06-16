@@ -65,7 +65,6 @@ class CandidateVoteView(APIView):
             user_name = serializer.validated_data.get("user_name")  # 투표자 가져옴
             try:
                 candidate = Candidate.objects.get(name=candidate_name)
-
                 user = User.objects.get(name=user_name)
                 if user.is_partvote:
                     response_data = {
@@ -78,7 +77,7 @@ class CandidateVoteView(APIView):
                 user.save()
                 response_data = {
                         "user_name": vote.user_name,  # 수정
-                        "candidate": vote.candidate_id , # 파트장 이름
+                        "candidate": candidate.name , # 파트장 이름
                         "candidate_cnt": candidate.vote_cnt
                 }
                 return Response(response_data, status=status.HTTP_200_OK)
