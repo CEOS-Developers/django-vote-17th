@@ -12,6 +12,15 @@ class SignupView(APIView):
     def post(self, request):
         serializer = SignUpSerializer(data=request.data)
         if serializer.is_valid(raise_exception=False):
+
+            user_id = serializer.validated_data.get('user_id') # 아이디 불러옴
+            if User.objects.filter(user_id=user_id).exists():
+                return Response({"message": "아이디가 중복됩니다."}, status=status.HTTP_400_BAD_REQUEST)
+
+            email = serializer.validated_data.get('email') # 이메일 불러옴
+            if User.objects.filter(email=email).exists():
+                return Response({"message": "이메일이 중복됩니다."}, status=status.HTTP_400_BAD_REQUEST)
+
             user = serializer.save(request)
             response = Response(
                 {
