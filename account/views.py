@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .serializers import UserSerializer,SignUpSerializer,LoginSerializer
 from django_vote_17th.settings import SECRET_KEY, REFRESH_TOKEN_SECRET_KEY
 from .models import User
+from django.contrib.auth import get_user_model
 
 
 class SignupView(APIView):
@@ -37,31 +38,27 @@ class SignupView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 class LoginView(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=False):
-            #유효성 검사를 통과한 경우 토큰 확인
-            user_id=serializer.validated_data.get("user_id")
+        serializer.is_valid(raise_exception=True)  # 유효성 검사 실패 시 예외 발생
 
-            #access_token 발급해둔 거 가져오기
-            access_token = serializer.validated_data['access_token']
+        # 유효성 검사를 통과한 경우 validated_data에서 값을 가져옴
+        user_id = serializer.validated_data.get("user_id")
+        access_token = serializer.validated_data.get("access_token")
 
-            response = Response({
-                "user_id": user_id,
-                "token":{
-                    "access_token": access_token.__str__(),
-                 }},
-                status=status.HTTP_200_OK,
-            )
+        response = Response({
+            "user_id": user_id,
+            "token": {
+                "access_token": access_token,
+            }},
+            status=status.HTTP_200_OK,
+        )
 
-            #쿠키에 삽입 후 프론트로 전달
-            response.set_cookie("access_token", access_token.__str__(), httponly=True, secure=True,
-                                max_age=60 * 60 * 3)  #만료 3시간
+        # 쿠키에 삽입 후 프론트로 전달
+        response.set_cookie("access_token", access_token, httponly=True, secure=True, max_age=60 * 60 * 3)  # 만료 3시간
 
-            return response
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return response
 
 
 
