@@ -6,10 +6,13 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
+# 구글에서 긁어온거라 다듬긴 해야 할 듯..
 class UserManager(BaseUserManager):
     def create_user(self, email, username, password=None):
         """
         주어진 이메일, 닉네임, 비밀번호 등 개인정보로 User 인스턴스 생성
+
+
         """
         if not email:
             raise ValueError(_('Users must have an email address'))
@@ -39,6 +42,7 @@ class UserManager(BaseUserManager):
         return user
 
 
+# 계정 엔티티
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         verbose_name=_('Email address'),
@@ -54,7 +58,10 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_('Date joined'),
         default=timezone.now
     )
+
+    # 어느팀인지(FK)
     team = models.ForeignKey('Team', on_delete=models.CASCADE, null=True)
+    # 어느파트인지(FK)
     part = models.ForeignKey('Part', on_delete=models.CASCADE, null=True)
 
     objects = UserManager()
@@ -71,6 +78,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.username
 
 
+# 팀 엔티티
 class Team(models.Model):
     name = models.CharField(max_length=20)
 
@@ -78,6 +86,7 @@ class Team(models.Model):
         return self.name
 
 
+# 파트 엔티티
 class Part(models.Model):
     name = models.CharField(max_length=20)
 
