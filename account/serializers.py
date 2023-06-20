@@ -96,9 +96,9 @@ class LoginSerializer(serializers.ModelSerializer):
             team = user.team
 
             if not user.check_password(password):
-                raise serializers.ValidationError("비밀번호가 틀렸습니다.")
+                raise serializers.ValidationError("비밀번호를 다시 확인해주세요. ")
         else:
-            raise serializers.ValidationError("존재하지 않는 계정입니다.")
+            raise serializers.ValidationError("아이디를 다시 확인해주세요. ")
 
         #user객체로부터 access_token 생성
         token = RefreshToken.for_user(user)
