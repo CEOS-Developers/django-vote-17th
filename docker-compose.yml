@@ -4,7 +4,7 @@ version: '3'
 services:
 
   db:
-    container_name: db
+    container_name: database
     image: mysql:5.7 #window
     restart: always
     environment:
@@ -20,7 +20,7 @@ services:
       - dbdata:/var/lib/mysql
 
   web:
-    container_name: web
+    container_name: webserver
     build: .
     command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     environment:
