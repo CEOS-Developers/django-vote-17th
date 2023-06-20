@@ -29,7 +29,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 DEBUG = env('DEBUG')
 
 #ALLOWED_HOSTS = ['0.0.0.0']
-ALLOWED_HOSTS=['127.0.0.1']
+ALLOWED_HOSTS=['0.0.0.0']
 
 # Application definition
 
