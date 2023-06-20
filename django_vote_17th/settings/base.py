@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'account',
     'vote',
     'corsheaders',
+    'rest_framework_simplejwt',
 ]
 
 AUTH_USER_MODEL = 'account.User'

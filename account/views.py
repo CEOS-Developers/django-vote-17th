@@ -46,9 +46,14 @@ class LoginView(APIView):
         # 유효성 검사를 통과한 경우 validated_data에서 값을 가져옴
         user_id = serializer.validated_data.get("user_id")
         access_token = serializer.validated_data.get("access_token")
+        user = User.objects.get(user_id=user_id)
+        team=user.team
+        part=user.part
 
         response = Response({
             "user_id": user_id,
+            "team": team,
+            "part": part,
             "token": {
                 "access_token": access_token,
             }},
