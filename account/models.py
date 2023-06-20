@@ -61,6 +61,8 @@ class User(AbstractBaseUser):
     email = models.EmailField("이메일", max_length=50, unique=True)
     part = models.CharField("파트", max_length=20)
     team = models.CharField("팀", max_length=20)
+    is_teamvote = models.BooleanField("팀투표 여부", default=False)
+    is_partvote = models.BooleanField("파트장투표 여부", default=False)
 
     # 활성화 여부 (기본값은 True) => 필수 설정
     is_active = models.BooleanField(default=True)

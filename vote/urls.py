@@ -4,5 +4,5 @@ app_name = 'vote'
 
 urlpatterns = [
     path('team/', TeamVoteView.as_view(), name='team-vote'),
-    path('candidate/', CandidateVoteView.as_view(), name='candidate-vote'),
+    path('candidate/<str:part>/', CandidateVoteView.as_view(), name='candidate-vote'),
 ]

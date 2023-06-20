@@ -92,6 +92,8 @@ class LoginSerializer(serializers.ModelSerializer):
 
         if User.objects.filter(user_id=user_id).exists():
             user = User.objects.get(user_id=user_id)
+            part = user.part
+            team = user.team
 
             if not user.check_password(password):
                 raise serializers.ValidationError("비밀번호가 틀렸습니다.")
@@ -105,6 +107,8 @@ class LoginSerializer(serializers.ModelSerializer):
         data = {
             'user_id': user_id,
             'user': user,
+            'part': part,
+            'team': team,
             'access_token': access_token,
         }
 
