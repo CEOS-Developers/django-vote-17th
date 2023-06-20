@@ -1,3 +1,4 @@
+
 from django_filters import exceptions
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
@@ -5,10 +6,12 @@ from account.views import AuthView
 from vote.serializers import *
 
 
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Team
+
 
 
 class TeamVoteView(APIView):
@@ -116,3 +119,4 @@ class CandidateVoteView(APIView):
 
         elif AuthView.get(self, request).status_code is status.HTTP_403_FORBIDDEN:
             raise exceptions.ValidationError(detail='Please login again')
+
