@@ -15,9 +15,9 @@ class Vote(models.Model):
     voter = models.ForeignKey('account.User', on_delete=models.CASCADE)
 
     # related_name = 'votes'로 user.votes.all()로 접근 가능
-    target_account = models.ForeignKey('account.User', on_delete=models.CASCADE, related_name='votes')
+    target_account = models.ForeignKey('account.User', on_delete=models.CASCADE, related_name='votes', null=True)
     # related_name = 'votes'로 team.votes.all()로 접근 가능
-    target_team = models.ForeignKey('account.Team', on_delete=models.CASCADE, related_name='votes')
+    target_team = models.ForeignKey('account.Team', on_delete=models.CASCADE, related_name='votes', null=True)
 
     def __str__(self):
         return self.poll
