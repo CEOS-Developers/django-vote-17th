@@ -43,12 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
     'accounts',
-    'boards',
-    'comments',
-    'timetables',
-    'tag',
+    'polls',
     'rest_framework',
     #'accounts.apps.MemberConfig',
     'rest_framework_simplejwt',
@@ -79,13 +75,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'vote_toyproject.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.mysql',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -97,10 +94,13 @@ TEMPLATES = [
             ],
         },
     },
+
 ]
 
 WSGI_APPLICATION = 'vote_toyproject.wsgi.application'
 
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -118,6 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+
 ]
 
 
@@ -180,7 +181,15 @@ SIMPLE_JWT = {
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.mysql',
-        'OPTIONS': {'charset': 'utf8mb4'},
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'voting',
+        'USER': 'root',
+        'PASSWORD': 'j20020607',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
+
 }
+
+# 추가
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

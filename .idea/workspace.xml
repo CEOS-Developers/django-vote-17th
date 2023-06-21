@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="fix account urls.py, views.py">
-      <change afterPath="$PROJECT_DIR$/.env.prod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile.prod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/settings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/settings/dev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/settings/prod.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vote_toyproject/wsgi.py" afterDir="false" />
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add inital settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote_toyproject/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
     </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +57,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\이소정\PycharmProjects\django-vote-17th" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\이소정\PycharmProjects\django-vote-17th" />
     </key>
@@ -90,7 +77,7 @@
       <workItem from="1685895499729" duration="3823000" />
       <workItem from="1687156633111" duration="2959000" />
       <workItem from="1687276909782" duration="6668000" />
-      <workItem from="1687347233996" duration="5590000" />
+      <workItem from="1687347233996" duration="5884000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -183,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687352762259</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add inital settings">
+      <created>1687358513503</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687358513503</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +209,7 @@
     <MESSAGE value="add account models.py" />
     <MESSAGE value="fix account serializers.py" />
     <MESSAGE value="fix account urls.py, views.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix account urls.py, views.py" />
+    <MESSAGE value="add inital settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="add inital settings" />
   </component>
 </project>
