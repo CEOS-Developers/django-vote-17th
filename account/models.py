@@ -6,9 +6,8 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
-# 구글에서 긁어온거라 다듬긴 해야 할 듯..
 class UserManager(BaseUserManager):
-    def create_user(self, email, username, password=None):
+    def create_user(self, email, username, team, part,password=None):
         """
         주어진 이메일, 닉네임, 비밀번호 등 개인정보로 User 인스턴스 생성
 
@@ -20,6 +19,8 @@ class UserManager(BaseUserManager):
         user = self.model(
             email=self.normalize_email(email),
             username=username,
+            team=team,
+            part=part,
         )
 
         user.set_password(password)
