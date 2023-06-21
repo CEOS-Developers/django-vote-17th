@@ -1,5 +1,6 @@
 from django.urls import path
-from account import views
+from poll import views
 
 urlpatterns = [
+    path('', views.PollAPIView.as_view()),
 ]
