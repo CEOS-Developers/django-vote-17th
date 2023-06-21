@@ -2,8 +2,8 @@ from poll.models import Poll, Vote
 from poll.serializers import PollSerializer, VoteSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from account.models import Team
-from account.serializers import TeamSerializer
+from account.models import Team, User
+from account.serializers import UserSerializer, TeamSerializer
 
 
 class PollAPIView(APIView):
@@ -39,10 +39,6 @@ class DemoVoteAPIView(APIView):
         return Response(serializer.data)
 
 
-
-
-
-
 class DemoResultAPIView(APIView):
     """
     DemoResultAPIView : 투표 결과를 가져오는 APIView
@@ -56,3 +52,36 @@ class DemoResultAPIView(APIView):
 
 
 # TODO : PartLeaderAPIView 구현
+class PartLeaderAPIView(APIView):
+    """
+    PartLeaderAPIView : 투표를 하는 APIView
+
+    GET /polls/vote/part-leader/front-end
+    GET /polls/vote/part-leader/back-end
+    GET /polls/vote/part-leader/design
+    GET /polls/vote/part-leader/project-manager
+    >> 각각 맞는 파트 인원들을 불러옴
+    """
+
+    @staticmethod
+    def get(request, part):
+        if part == "front-end":
+            users = User.objects.filter(part=2)
+            serializer = UserSerializer(users, many=True)
+            return Response(serializer.data)
+        elif part == "back-end":
+            users = User.objects.filter(part=1)
+            serializer = UserSerializer(users, many=True)
+            return Response(serializer.data)
+        elif part == "design":
+            users = User.objects.filter(part=3)
+            serializer = UserSerializer(users, many=True)
+            return Response(serializer.data)
+        elif part == "project-manager":
+            users = User.objects.filter(part=4)
+            serializer = UserSerializer(users, many=True)
+            return Response(serializer.data)
+        else:
+            return Response(status=400)
+
+

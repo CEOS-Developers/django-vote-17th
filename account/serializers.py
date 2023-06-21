@@ -6,6 +6,13 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+    GET polls/vote/part-leader/front-end/
+    GET polls/vote/part-leader/back-end/
+    GET polls/vote/part-leader/design/
+    GET polls/vote/part-leader/project-manager/
+    팀 인원 명단을 불러오기 위한 시리얼라이저
+    """
     class Meta:
         model = User
         fields = '__all__'
@@ -31,6 +38,11 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class TeamSerializer(serializers.ModelSerializer):
+
+    """
+    GET polls/vote/demo/
+    팀 명단을 불러오기 위한 시리얼라이저
+    """
     class Meta:
         model = Team
         fields = '__all__'
@@ -42,3 +54,5 @@ class TeamSerializer(serializers.ModelSerializer):
         )
         team.save()
         return team
+
+
