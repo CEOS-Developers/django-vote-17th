@@ -46,13 +46,13 @@ class DemoResultAPIView(APIView):
     """
     @staticmethod
     def get(request):
-        votes = Vote.objects.filter(poll=1)
+        votes = Vote.objects.filter(poll=2)
         serializer = VoteSerializer(votes, many=True)
         return Response(serializer.data)
 
 
 # TODO : PartLeaderAPIView 구현
-class PartLeaderAPIView(APIView):
+class PartLeaderVoteAPIView(APIView):
     """
     PartLeaderAPIView : 투표를 하는 APIView
 
@@ -85,3 +85,36 @@ class PartLeaderAPIView(APIView):
             return Response(status=400)
 
 
+class PartLeaderResultAPIView(APIView):
+    """
+    PartLeaderResultAPIView : 투표 결과를 가져오는 APIView
+    Vote를 가져올 때 Poll의 pk를 이용해서 가져온다.
+    """
+    @staticmethod
+    def get(request, part):
+        if part == "front-end":
+            votes = Vote.objects.filter(poll=1)
+            # 투표자 중 front-end 파트인 사람들만 가져옴
+            votes = votes.filter(target_account__part=2)
+            serializer = VoteSerializer(votes, many=True)
+            return Response(serializer.data)
+        elif part == "back-end":
+            votes = Vote.objects.filter(poll=1)
+            # 투표자 중 back-end 파트인 사람들만 가져옴
+            votes = votes.filter(target_account__part=1)
+            serializer = VoteSerializer(votes, many=True)
+            return Response(serializer.data)
+        elif part == "design":
+            votes = Vote.objects.filter(poll=1)
+            # 투표자 중 design 파트인 사람들만 가져옴
+            votes = votes.filter(target_account__part=3)
+            serializer = VoteSerializer(votes, many=True)
+            return Response(serializer.data)
+        elif part == "project-manager":
+            votes = Vote.objects.filter(poll=1)
+            # 투표자 중 project-manager 파트인 사람들만 가져옴
+            votes = votes.filter(target_account__part=4)
+            serializer = VoteSerializer(votes, many=True)
+            return Response(serializer.data)
+        else:
+            return Response(status=400)
