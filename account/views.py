@@ -1,3 +1,4 @@
+import jwt
 from django.shortcuts import render
 from django.contrib.auth import authenticate
 from django.shortcuts import get_object_or_404
@@ -8,6 +9,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import *
 from rest_framework.permissions import AllowAny
+from .serializers import UserSignupSerializer,UserLoginSerializer
 
 class SignupView(APIView):
     def post(self, request, format=None):
@@ -20,7 +22,7 @@ class SignupView(APIView):
 class LoginView(APIView):
     def post(self, request):
         user = authenticate(
-            username=request.data.get("username"), password=request.data.get("password")
+            userId=request.data.get("userId"), password=request.data.get("password")
         )
         if user is not None:
             serializer = UserLoginSerializer(user)
@@ -46,20 +48,20 @@ class LoginView(APIView):
 
 
 class AuthView(APIView):
- serializer_class = LoginSerializer
+ serializer_class = UserLoginSerializer
 
- def post(self, request, username=None):
+ def post(self, request, userId=None):
      serializer = self.serializer_class(data=request.data)
 
      if serializer.is_valid(raise_exception=True):
-         id = serializer.validated_data['id']
+         userId = serializer.validated_data['id']
          access = serializer.validated_data['access']
          refresh = serializer.validated_data['refresh']
          #data = serializer.validated_data
          res = Response(
              {
                  "message": "로그인되었습니다.",
-                 "id": id,
+                 "id": userId,
                  "access": access,
                  "refresh": refresh
              },
