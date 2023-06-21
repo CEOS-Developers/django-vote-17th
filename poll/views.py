@@ -1,5 +1,5 @@
-from poll.models import Poll
-from poll.serializers import PollSerializer
+from poll.models import Poll, Vote
+from poll.serializers import PollSerializer, VoteSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -13,6 +13,14 @@ class PollAPIView(APIView):
         print(serializer.data)
         return Response(serializer.data)
 
+
+class PollResultAPIView(APIView):
+
+    @staticmethod
+    def get(request, pk):
+        votes = Vote.objects.filter(poll=pk)
+        serializer = VoteSerializer(votes, many=True)
+        return Response(serializer.data)
 
 
 '''
