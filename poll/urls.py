@@ -3,5 +3,5 @@ from poll import views
 
 urlpatterns = [
     path('', views.PollAPIView.as_view()),
-    path('<int:pk>/', views.PollResultAPIView.as_view()),
+    path('<str:poll_type>/', views.PollResultAPIView.as_view()),
 ]
