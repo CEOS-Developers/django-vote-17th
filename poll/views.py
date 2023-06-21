@@ -58,9 +58,11 @@ class PartLeaderVoteAPIView(APIView):
 
     GET /polls/vote/part-leader/front-end
     GET /polls/vote/part-leader/back-end
-    GET /polls/vote/part-leader/design
-    GET /polls/vote/part-leader/project-manager
     >> 각각 맞는 파트 인원들을 불러옴
+
+    POST /polls/vote/part-leader/front-end
+    POST /polls/vote/part-leader/back-end
+    >> 투표하기
     """
 
     @staticmethod
@@ -73,20 +75,24 @@ class PartLeaderVoteAPIView(APIView):
             users = User.objects.filter(part=1)
             serializer = UserSerializer(users, many=True)
             return Response(serializer.data)
-        elif part == "design":
-            users = User.objects.filter(part=3)
-            serializer = UserSerializer(users, many=True)
-            return Response(serializer.data)
-        elif part == "project-manager":
-            users = User.objects.filter(part=4)
-            serializer = UserSerializer(users, many=True)
-            return Response(serializer.data)
         else:
             return Response(status=400)
+
+    @staticmethod
+    def post(request, part):
+        serializer = VoteSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=400)
 
 
 class PartLeaderResultAPIView(APIView):
     """
+    GET /polls/part-leader/front-end
+    GET /polls/part-leader/back-end
+
     PartLeaderResultAPIView : 투표 결과를 가져오는 APIView
     Vote를 가져올 때 Poll의 pk를 이용해서 가져온다.
     """
@@ -102,18 +108,6 @@ class PartLeaderResultAPIView(APIView):
             votes = Vote.objects.filter(poll=1)
             # 투표자 중 back-end 파트인 사람들만 가져옴
             votes = votes.filter(target_account__part=1)
-            serializer = VoteSerializer(votes, many=True)
-            return Response(serializer.data)
-        elif part == "design":
-            votes = Vote.objects.filter(poll=1)
-            # 투표자 중 design 파트인 사람들만 가져옴
-            votes = votes.filter(target_account__part=3)
-            serializer = VoteSerializer(votes, many=True)
-            return Response(serializer.data)
-        elif part == "project-manager":
-            votes = Vote.objects.filter(poll=1)
-            # 투표자 중 project-manager 파트인 사람들만 가져옴
-            votes = votes.filter(target_account__part=4)
             serializer = VoteSerializer(votes, many=True)
             return Response(serializer.data)
         else:
