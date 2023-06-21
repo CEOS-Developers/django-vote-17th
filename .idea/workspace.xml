@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add base.py">
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add serializers.py, urls.py files @ polls">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/serializers.py" afterDir="false" />
     </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +77,7 @@
       <workItem from="1685895499729" duration="3823000" />
       <workItem from="1687156633111" duration="2959000" />
       <workItem from="1687276909782" duration="6668000" />
-      <workItem from="1687347233996" duration="9132000" />
+      <workItem from="1687347233996" duration="10356000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -184,7 +184,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687359029288</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add polls model.py">
+      <created>1687362632108</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687362632108</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add serializers.py, urls.py files @ polls">
+      <created>1687362767726</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687362767726</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +232,8 @@
     <MESSAGE value="fix account urls.py, views.py" />
     <MESSAGE value="add inital settings" />
     <MESSAGE value="add base.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="add base.py" />
+    <MESSAGE value="add polls model.py" />
+    <MESSAGE value="add serializers.py, urls.py files @ polls" />
+    <option name="LAST_COMMIT_MESSAGE" value="add serializers.py, urls.py files @ polls" />
   </component>
 </project>
