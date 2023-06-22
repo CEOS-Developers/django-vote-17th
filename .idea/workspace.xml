@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add polls outline" />
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="fix gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,7 @@
       <workItem from="1685895499729" duration="3823000" />
       <workItem from="1687156633111" duration="2959000" />
       <workItem from="1687276909782" duration="6668000" />
-      <workItem from="1687347233996" duration="10568000" />
+      <workItem from="1687347233996" duration="12457000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -202,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687363905010</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix gitignore">
+      <created>1687410415370</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687410415370</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix gitignore">
+      <created>1687410538978</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687410538978</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +255,7 @@
     <MESSAGE value="add polls model.py" />
     <MESSAGE value="add serializers.py, urls.py files @ polls" />
     <MESSAGE value="add polls outline" />
-    <option name="LAST_COMMIT_MESSAGE" value="add polls outline" />
+    <MESSAGE value="fix gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix gitignore" />
   </component>
 </project>
