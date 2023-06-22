@@ -135,7 +135,7 @@ celerybeat.pid
 django_rest_framework_17th/.env
 .venv
 env/
-.env.prod
+env.prod/
 venv/
 ENV/
 env.bak/
