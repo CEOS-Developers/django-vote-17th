@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from account.models import Team, User
 from account.serializers import UserSerializer, TeamSerializer
+from rest_framework.permissions import IsAuthenticated
 
 
 class PollAPIView(APIView):
@@ -20,11 +21,15 @@ class DemoVoteAPIView(APIView):
     """
     DemoVoteAPIView : 투표를 하는 APIView
 
-    POST /polls/vote/demo/ : 투표를 한다
+    POST /polls/vote/demo/ : 투표를 한다 **토큰 인증 필요**
     GET /polls/vote/demo/ : 투표 선택지(팀 명단)을 불러온다
     """
+    permission_classes = (IsAuthenticated,)
+
+
     @staticmethod
     def post(request):
+
         serializer = VoteSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -64,6 +69,7 @@ class PartLeaderVoteAPIView(APIView):
     POST /polls/vote/part-leader/back-end
     >> 투표하기
     """
+    permission_classes = (IsAuthenticated,)
 
     @staticmethod
     def get(request, part):
