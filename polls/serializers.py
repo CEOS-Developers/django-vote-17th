@@ -4,13 +4,12 @@ from polls.models import *
 
 class TeamPollSerializer(serializers.ModelSerializer):
 
-
     class Meta:
         model = teamPoll
-        fields = ['userId', 'team']
+        fields = ['userId', 'team', 'voteCnt']
 
 
 class PartPollSerializer(serializers.ModelSerializer):
     class Meta:
         model = partPoll
-        fields = ['userId', 'voteCnt']
+        fields = ['userId', 'candidate', 'voteCnt']
