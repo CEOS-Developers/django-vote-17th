@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from account.models import Team
+from account.models import *
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -27,9 +27,16 @@ class RegisterSerializer(serializers.ModelSerializer):
         username = validated_data.get('username')
         email = validated_data.get('email')
         password = validated_data.get('password')
+        team_name = validated_data.get('team')
+        part_name = validated_data.get('part')
+        # 팀, 파트 이름으로 pk 가져오기
+        team_pk = Team.objects.get(name__exact=team_name)
+        part_pk = Part.objects.get(name__exact=part_name)
         user = User(
             username=username,
-            email=email
+            email=email,
+            team=team_pk,
+            part=part_pk,
         )
         user.set_password(password)
         user.save()
