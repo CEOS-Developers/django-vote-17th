@@ -1,7 +1,7 @@
 # django-vote-17th
 파트장/데모데이 투표
 
-###api 명세서
+### api 명세서
 https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
 
 ### 구성🍒
