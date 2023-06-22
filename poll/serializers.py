@@ -20,6 +20,7 @@ class VoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vote
+        depth = 1
         fields = '__all__'
 
     def create(self, validated_data):
@@ -31,7 +32,7 @@ class VoteSerializer(serializers.ModelSerializer):
             poll=poll,
             voter=voter,
             target_account=target_account,
-            target_team=target_team
+            target_team=target_team,
         )
         vote.save()
         return vote
