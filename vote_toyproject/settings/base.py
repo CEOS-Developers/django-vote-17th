@@ -22,7 +22,7 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
-environ.Env.read_env(os.path.join(BASE_DIR, 'vote_toyproject/.env'))
+environ.Env.read_env(os.path.join(BASE_DIR, 'vote_toyproject/.env.py'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -87,8 +87,10 @@ ROOT_URLCONF = 'vote_toyproject.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.mysql',
-        'DIRS': [],
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -198,3 +200,6 @@ DATABASES = {
 
 # 추가
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000' ,'http://localhost:3000']
+CORS_ALLOW_CREDENTIALS = True

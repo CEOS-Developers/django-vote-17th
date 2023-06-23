@@ -4,18 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add docker files">
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add manage.py, polls앱에 views.py, urls.py에 추가">
+      <change afterPath="$PROJECT_DIR$/.env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/docker/entrypoint.prod.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/nginx/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/scripts/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/.env.prod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote_toyproject/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vote_toyproject/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
+    </list>
+    <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
+    <list id="d4a2805b-b96d-45a6-9fc6-9bf723aa613b" name="Changes by 이소정" comment="">
+      <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vote_toyproject/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vote_toyproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/urls.py" afterDir="false" />
     </list>
-    <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,6 +49,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/vote_toyproject/settings/base.py">
+      <ranges>
+        <range start1="16" end1="17" start2="16" end2="17" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="24" end1="25" start2="24" end2="25" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="45" end1="46" start2="45" end2="46" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="89" end1="91" start2="89" end2="93" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="195" end1="196" start2="197" end2="197" changelist="d4a2805b-b96d-45a6-9fc6-9bf723aa613b" />
+        <range start1="200" end1="200" start2="201" end2="204" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -43,24 +72,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/이소정/PycharmProjects/django-vote-17th&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/project/django-vote-17th",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\django-vote-17th" />
+      <recent name="C:\project\django-vote-17th\vote_toyproject" />
       <recent name="C:\Users\이소정\PycharmProjects\django-vote-17th" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -80,16 +111,9 @@
       <workItem from="1685895499729" duration="3823000" />
       <workItem from="1687156633111" duration="2959000" />
       <workItem from="1687276909782" duration="6668000" />
-      <workItem from="1687347233996" duration="15278000" />
-      <workItem from="1687493938391" duration="4191000" />
-      <workItem from="1687498607972" duration="43000" />
-      <workItem from="1687498718001" duration="90000" />
-      <workItem from="1687498876494" duration="352000" />
-      <workItem from="1687499385252" duration="58000" />
-      <workItem from="1687499514371" duration="639000" />
-      <workItem from="1687506611936" duration="2883000" />
-      <workItem from="1687510132352" duration="493000" />
-      <workItem from="1687510908532" duration="928000" />
+      <workItem from="1687347233996" duration="14809000" />
+      <workItem from="1687494550076" duration="3342000" />
+      <workItem from="1687498183706" duration="4821000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -245,14 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687444897383</updated>
     </task>
-    <task id="LOCAL-00023" summary="add docker files">
-      <created>1687445286480</created>
+    <task id="LOCAL-00023" summary="add gitignore">
+      <created>1687495274667</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1687445286480</updated>
+      <updated>1687495274668</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add manage.py, polls앱에 views.py, urls.py에 추가">
+      <created>1687498579877</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687498579877</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +323,8 @@
     <MESSAGE value="fix gitignore" />
     <MESSAGE value="add cors headers" />
     <MESSAGE value="add polls models.py, serializers.py" />
-    <MESSAGE value="add docker files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add docker files" />
+    <MESSAGE value="add gitignore" />
+    <MESSAGE value="add manage.py, polls앱에 views.py, urls.py에 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="add manage.py, polls앱에 views.py, urls.py에 추가" />
   </component>
 </project>
