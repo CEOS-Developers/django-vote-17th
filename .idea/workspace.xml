@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add polls models.py, serializers.py">
-      <change afterPath="$PROJECT_DIR$/.env.prod" afterDir="false" />
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
     </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,7 +83,8 @@
       <workItem from="1687156633111" duration="2959000" />
       <workItem from="1687276909782" duration="6668000" />
       <workItem from="1687347233996" duration="14809000" />
-      <workItem from="1687494550076" duration="675000" />
+      <workItem from="1687494550076" duration="3342000" />
+      <workItem from="1687498183706" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -234,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687444897383</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add gitignore">
+      <created>1687495274667</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1687495274668</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +287,7 @@
     <MESSAGE value="fix gitignore" />
     <MESSAGE value="add cors headers" />
     <MESSAGE value="add polls models.py, serializers.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="add polls models.py, serializers.py" />
+    <MESSAGE value="add gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
   </component>
 </project>
