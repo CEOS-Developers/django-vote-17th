@@ -1,6 +1,6 @@
 from django.contrib.auth.hashers import check_password
 from rest_framework import status
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
@@ -10,7 +10,6 @@ from serializers import RegisterSerializer, UserSerializer
 
 
 class SignUp(APIView):
-    permission_classes = [AllowAny]
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -23,7 +22,6 @@ class SignUp(APIView):
 
 
 class SignIn(APIView):
-    permission_classes = [AllowAny]
 
     def post(self, request):
         username = request.data['loginId']
@@ -70,6 +68,8 @@ class SignIn(APIView):
 
 
 class SignOut(APIView):
+    permission_classes = [IsAuthenticated]
+
     def post(self, request):
         response = Response({
             "message": "Logout success"
@@ -80,6 +80,7 @@ class SignOut(APIView):
 
 
 class IDCheck(APIView):
+
     def post(self, request):
 
         if User.objects.filter(login_id=request.data['loginId']).exists():
@@ -94,6 +95,7 @@ class IDCheck(APIView):
 
 
 class EmailCheck(APIView):
+
     def post(self, request):
 
         if User.objects.filter(email=request.data['email']).exists():
