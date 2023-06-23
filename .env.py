@@ -1,0 +1,10 @@
+# .env
+
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,[::1]
+DJANGO_SECRET_KEY=#c=8n%l6(3_fe)q2!4e8=*f^^rh0+f$%nrwml5hmx_utxl7e_4
+
+DATABASE_NAME=last_db
+DATABASE_USER=root
+DATABASE_PASSWORD=j20020607
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
