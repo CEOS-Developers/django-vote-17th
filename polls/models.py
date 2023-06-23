@@ -25,6 +25,7 @@ class partPoll(models.Model):
     }
 
     candidatesChoices = {
+        ('황재령', '황재령'),
         ('김지원', '김지원'),
         ('김현수', '김현수'),
         ('김현우', '김현우'),
@@ -34,7 +35,6 @@ class partPoll(models.Model):
         ('임탁균', '임탁균'),
         ('조예지', '조예지'),
         ('최유미', '최유미'),
-        ('황재령', '황재령'),
         ('권가은', '권가은'),
         ('김문기', '김문기'),
         ('김서연', '김서연'),
@@ -46,7 +46,7 @@ class partPoll(models.Model):
         ('최민주', '최민주'),
     }
     part = models.CharField(max_length=10, choices=partChoices)
-    name = models.CharField(max_length=10)
+    userName = models.CharField(max_length=10)
     voteNum = models.IntegerField(default=0)
     candidate = models.CharField(max_length=10, choices=candidatesChoices)
     def __str__(self):

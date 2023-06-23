@@ -41,7 +41,7 @@ class UserSignupSerializer(serializers.ModelSerializer):
 
         else:
             user = User.objects.create(
-                userId=validated_data['username'],
+                userId=validated_data['userId'],
                 name=validated_data['name'],
                 part=validated_data['part'],
                 team=validated_data['team'],
@@ -52,10 +52,6 @@ class UserSignupSerializer(serializers.ModelSerializer):
             return user
 
 class UserLoginSerializer(serializers.Serializer):
-
-    class Meta:
-        model = User
-        fields = ['id', 'username','password','name', 'created_at', 'updated_at', 'part', 'team','team_vote','part_vote']
 
     partList = (
         ('backend', 'backend'),
@@ -70,7 +66,7 @@ class UserLoginSerializer(serializers.Serializer):
         ('Hooking', 'Hooking'),
     )
 
-    username = serializers.CharField(max_length=32)  # id
+    userId = serializers.CharField(max_length=32)  # id
     password = serializers.CharField(max_length=32, write_only=True)
     name = serializers.CharField(max_length=8)  # 이름
     email = serializers.EmailField()
@@ -101,7 +97,7 @@ class UserLoginSerializer(serializers.Serializer):
 
         data = {
             'id': user.id,
-            'username': user.username,
+            'userId': user.userId,
             'name': user.name,
             'part': user.part,
             'team': user.team,

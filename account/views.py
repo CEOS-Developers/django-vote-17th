@@ -13,7 +13,8 @@ from .serializers import UserSignupSerializer,UserLoginSerializer
 
 class SignupView(APIView):
     def post(self, request, format=None):
-        serializer = UserSignupSerializer(data=request.data)
+        user = User.objects.all() #추가
+        serializer = UserSignupSerializer(data=request.data, many=True)
         if serializer.is_valid(raise_exception=False):
             user = serializer.save()
             return Response({'message' : '회원가입 성공', 'data': serializer.data}, status=HTTP_200_OK)
@@ -54,7 +55,7 @@ class AuthView(APIView):
      serializer = self.serializer_class(data=request.data)
 
      if serializer.is_valid(raise_exception=True):
-         userId = serializer.validated_data['id']
+         userId = serializer.validated_data['userId']
          access = serializer.validated_data['access']
          refresh = serializer.validated_data['refresh']
          #data = serializer.validated_data

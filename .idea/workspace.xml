@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote_toyproject/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote_toyproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/models.py" afterDir="false" />
     </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
+    <list id="f334c2a7-77e7-4baa-96de-b94adab6002d" name="Changes by 이소정" comment="">
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +43,44 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/manage.py">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="0" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="2" end1="2" start2="1" end2="3" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="4" end1="4" start2="5" end2="9" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="7" end1="7" start2="12" end2="13" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="19" end1="20" start2="25" end2="25" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/account/serializers.py">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="8" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="9" end1="10" start2="12" end2="13" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="43" end1="44" start2="46" end2="47" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="54" end1="58" start2="57" end2="57" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="72" end1="73" start2="71" end2="72" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="77" end1="78" start2="76" end2="77" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="80" end1="81" start2="79" end2="80" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="103" end1="104" start2="102" end2="103" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/account/views.py">
+      <ranges>
+        <range start1="14" end1="14" start2="14" end2="18" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="15" end1="16" start2="19" end2="21" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+        <range start1="22" end1="22" start2="27" end2="31" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="56" end1="57" start2="65" end2="66" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/account/models.py">
+      <ranges>
+        <range start1="31" end1="37" start2="31" end2="40" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="38" end1="41" start2="41" end2="47" changelist="f334c2a7-77e7-4baa-96de-b94adab6002d" />
+        <range start1="74" end1="76" start2="80" end2="80" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -45,22 +92,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/이소정/PycharmProjects/django-vote-17th",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/이소정/PycharmProjects/django-vote-17th&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\이소정\PycharmProjects\django-vote-17th" />
