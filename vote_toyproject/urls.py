@@ -18,7 +18,7 @@ from django.urls import path, include
 #from account.views import home
 
 urlpatterns = [
-    path(''),
+    #path(''),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('polls/', include('polls.urls')),
