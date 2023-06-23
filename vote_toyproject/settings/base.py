@@ -14,7 +14,7 @@ import os
 from datetime import timedelta
 import environ
 
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'account.User'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -43,10 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
+    'account',
     'polls',
     'rest_framework',
-    #'accounts.apps.MemberConfig',
+    #'account.apps.MemberConfig',
     'rest_framework_simplejwt',
     'corsheaders',
 ]
