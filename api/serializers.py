@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class RegisterSerializer(serializers.ModelSerializer):
+class SignUpRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['name', 'login_id', 'password', 'email', 'team', 'part']
@@ -34,6 +34,20 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class SignInRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['login_id', 'password']
+
+
+class ResponseSerializer(serializers.Serializer):
+    code = serializers.IntegerField()
+    messages = serializers.CharField()
+
+
+
 
 
 
