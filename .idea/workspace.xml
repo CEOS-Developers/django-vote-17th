@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="add manage.py, polls앱에 views.py, urls.py에 추가">
-      <change afterPath="$PROJECT_DIR$/.env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/docker/entrypoint.prod.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/nginx/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/scripts/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/.env.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote_toyproject/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote_toyproject/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
-    </list>
-    <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
-    <list id="d4a2805b-b96d-45a6-9fc6-9bf723aa613b" name="Changes by 이소정" comment="">
-      <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vote_toyproject/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/settings/base.py" afterDir="false" />
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/vote_toyproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/vote_toyproject/urls.py" afterDir="false" />
     </list>
+    <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,18 +31,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/vote_toyproject/settings/base.py">
-      <ranges>
-        <range start1="16" end1="17" start2="16" end2="17" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
-        <range start1="24" end1="25" start2="24" end2="25" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
-        <range start1="45" end1="46" start2="45" end2="46" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
-        <range start1="89" end1="91" start2="89" end2="93" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
-        <range start1="195" end1="196" start2="197" end2="197" changelist="d4a2805b-b96d-45a6-9fc6-9bf723aa613b" />
-        <range start1="200" end1="200" start2="201" end2="204" changelist="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -72,22 +42,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/project/django-vote-17th",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/project/django-vote-17th&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\project\django-vote-17th" />
