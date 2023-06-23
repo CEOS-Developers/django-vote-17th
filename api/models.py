@@ -79,3 +79,35 @@ class User(AbstractBaseUser, BaseTimeModel, PermissionsMixin):
 
     def __str__(self):
         return self.login_id
+
+
+class Team(BaseTimeModel):
+
+    TEAM_CHOCIES = [
+        ('DANSUPPORT', 'Dansupport'),
+        ('REPICK', 'Repick'),
+        ('THERAPEASE', 'TherapEase'),
+        ('HOOKING', 'Hooking'),
+        ('BARIBARI', 'BariBari')
+    ]
+
+    tname = models.CharField(max_length=30, choices=TEAM_CHOCIES, unique=True)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.tname
+
+
+class Candidate(BaseTimeModel):
+
+    PART_CHOICES = [
+        ('BE', 'BE'),
+        ('FE', 'FE')
+    ]
+
+    cname = models.CharField(max_length=30, unique=True)
+    part = models.CharField(max_length=2, choices=PART_CHOICES)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.cname
