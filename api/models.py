@@ -53,16 +53,16 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, BaseTimeModel, PermissionsMixin):
 
     PART_CHOICES = [
-        ('BE', 'BE'),
-        ('FE', 'FE')
+        ('be', 'BE'),
+        ('fe', 'FE')
     ]
 
     TEAM_CHOICES = [
-        ('DANSUPPRORT', 'Dansupport'),
+        ('댄서포트', 'Dansupport'),
         ('REPICK', 'Repick'),
         ('THERAPEASE','TherapEase'),
         ('HOOKING', 'Hooking'),
-        ('BARIBARI', 'BariBari')
+        ('바리바리', 'BariBari')
     ]
 
     login_id = models.CharField(max_length=15, unique=True)
@@ -70,7 +70,8 @@ class User(AbstractBaseUser, BaseTimeModel, PermissionsMixin):
     name = models.CharField(max_length=10)
     part = models.CharField(max_length=2, choices=PART_CHOICES)
     team = models.CharField(max_length=30, choices=TEAM_CHOICES)
-
+    isDemoVoted = models.BooleanField(default=False, null=True)
+    isCandiVoted = models.BooleanField(default=False, null=True)
 
     objects = UserManager()
 
@@ -83,16 +84,16 @@ class User(AbstractBaseUser, BaseTimeModel, PermissionsMixin):
 
 class Team(BaseTimeModel):
 
-    TEAM_CHOCIES = [
-        ('DANSUPPORT', 'Dansupport'),
+    TEAM_CHOICES = [
+        ('댄서포트', 'Dansupport'),
         ('REPICK', 'Repick'),
         ('THERAPEASE', 'TherapEase'),
         ('HOOKING', 'Hooking'),
-        ('BARIBARI', 'BariBari')
+        ('바리바리', 'BariBari')
     ]
 
-    tname = models.CharField(max_length=30, choices=TEAM_CHOCIES, unique=True)
-    count = models.IntegerField(default=0)
+    tname = models.CharField(max_length=30, choices=TEAM_CHOICES, unique=True)
+    count = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         return self.tname
@@ -101,13 +102,13 @@ class Team(BaseTimeModel):
 class Candidate(BaseTimeModel):
 
     PART_CHOICES = [
-        ('BE', 'BE'),
-        ('FE', 'FE')
+        ('be', 'BE'),
+        ('fe', 'FE')
     ]
 
     cname = models.CharField(max_length=30, unique=True)
     part = models.CharField(max_length=2, choices=PART_CHOICES)
-    count = models.IntegerField(default=0)
+    count = models.IntegerField(default=0, null=True)
 
     def __str__(self):
         return self.cname
