@@ -7,13 +7,24 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import authenticate
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
+from account.models import Team, Part
 
 
 class RegisterAPIView(APIView):
 
     @staticmethod
     def post(request):
-        serializer = RegisterSerializer(data=request.data)
+        print(request.data)
+        # get prime key of 'team' = 'Repick'
+        team = Team.objects.get(name=request.data.get('team')).pk
+        part = Part.objects.get(name=request.data.get('part')).pk
+
+        print(team, part)
+        account = request.data.copy()
+        account['team'] = team
+        account['part'] = part
+
+        serializer = RegisterSerializer(data=account)
         if serializer.is_valid():
             user = serializer.save()
             # jwt token 접근해주기
