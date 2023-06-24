@@ -165,3 +165,5 @@ SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False
 }
 
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '_static')
