@@ -15,6 +15,6 @@ urlpatterns = [
     path('votes/teams/', DemoVoteAPIView.as_view()),
     path('votes/teams/result/', DemoVoteResultAPIView.as_view()),
     path('votes/candidates/authority', CandiVoteAuthority.as_view()),
-    path('votes/teams/authority', CandiVoteAuthority.as_view())
+    path('votes/teams/authority', DemoVoteAuthority.as_view())
 ]
 

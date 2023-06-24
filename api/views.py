@@ -54,7 +54,17 @@ class SignIn(APIView):
                                                     'refresh_token': openapi.Schema(type=openapi.TYPE_STRING,
                                                                                     description="Refresh Token")
                                                 }
-                                                )
+                        ),
+                        'user': openapi.Schema(type=openapi.TYPE_OBJECT, description="User",
+                                                properties={
+                                                    'name': openapi.Schema(type=openapi.TYPE_STRING,
+                                                                                   description="User Name"),
+                                                    'part': openapi.Schema(type=openapi.TYPE_STRING,
+                                                                                    description="User Part"),
+                                                    'team': openapi.Schema(type=openapi.TYPE_STRING,
+                                                                           description="User Team"),
+                                                }
+                        )
                     }
                 )
             ),
@@ -91,6 +101,11 @@ class SignIn(APIView):
                     "token": {
                         "access_token": access_token,
                         "refresh_token": refresh_token
+                    },
+                    "user": {
+                        "name": user.name,
+                        "part": user.part,
+                        "team": user.team
                     }
                 },
                 status=status.HTTP_200_OK
@@ -248,7 +263,8 @@ class CandidateVoteAPIView(APIView):
         }
     )
     def post(self, request):
-        if request.user.isCandiVoted is False:
+        part = request.data['part']
+        if request.user.part == part:
             cname = request.data['cname']
             candidate = Candidate.objects.get(cname=cname)
             candidate.count = candidate.count + 1
@@ -261,7 +277,7 @@ class CandidateVoteAPIView(APIView):
             request.user.save()
         else:
             response = Response(
-                {"code": 400, "message": "파트장 투표 참여 실패."}, status=status.HTTP_400_BAD_REQUEST
+                {"code": 400, "message": "소속된 파트가 아닙니다."}, status=status.HTTP_400_BAD_REQUEST
             )
         return response
 
@@ -309,8 +325,14 @@ class DemoVoteAPIView(APIView):
         }
     )
     def post(self, request):
-        if request.user.isDemoVoted is False:
-            tname = request.data['tname']
+        tname = request.data['tname']
+        print(tname)
+        print(request.user.team)
+        if request.user.team == tname:
+            response = Response(
+                {"code": 400, "message": "소속된 팀에는 투표하실 수 없습니다."}, status=status.HTTP_400_BAD_REQUEST
+            )
+        else:
             team = Team.objects.get(tname=tname)
             team.count = team.count + 1
             team.save()
@@ -318,12 +340,8 @@ class DemoVoteAPIView(APIView):
                 {"code": 200, "message": "데모데이 투표 참여 성공."}, status=status.HTTP_200_OK
             )
             # User의 isCandiVote 값 변경해주기
-            request.user.isCandiVoted = True
-            request.user.save
-        else:
-            response = Response(
-                {"code": 400, "message": "데모데이 투표 참여 실패."}, status=status.HTTP_400_BAD_REQUEST
-            )
+            request.user.isDemoVoted = True
+            request.user.save()
         return response
 
 
