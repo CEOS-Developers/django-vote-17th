@@ -29,16 +29,22 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, userId, email, password=None):
-        user = self.create_user(userId, email, password)
+    def create_superuser(self, userId=None, name=None, email=None, part=None, team=None, password=None,
+                         is_candidate=None, **extra_fields):
+        superuser = self.create_user(
+            userId=userId,
+            name=name,
+            email=email,
+            part=part,
+            team=team,
+            password=password,
 
-        user.is_superuser = True
-        user.is_admin = True
-        user.level = 0
-
-        user.save(using=self._db)
-        return user
-
+        )
+        superuser.is_staff = True
+        superuser.is_superuser = True
+        superuser.is_active = True
+        superuser.save(using=self._db)
+        return superuser
 
 
 class User(AbstractUser):

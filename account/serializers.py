@@ -3,11 +3,14 @@ from .models import *
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class UserSignupSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'userId','password','name', 'created_at', 'updated_at', 'part', 'team']
+        fields = ['id','userId','password','name', 'created_at', 'updated_at', 'part', 'email','team']
 
     partList = (
         ('backend', 'backend'),
@@ -71,10 +74,10 @@ class UserLoginSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=8)  # 이름
     email = serializers.EmailField()
     part = serializers.ChoiceField(
-        choices = partList
+        choices=partList
     )
     team = serializers.ChoiceField(
-        choices = teamList
+        choices=teamList
     )
     teamPoll = serializers.BooleanField(default=False)
     partPoll = serializers.BooleanField(default=False)

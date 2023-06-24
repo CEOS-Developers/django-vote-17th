@@ -12,6 +12,10 @@ from rest_framework.permissions import AllowAny
 from .serializers import UserSignupSerializer,UserLoginSerializer
 
 class SignupView(APIView):
+    # 정보 조회 추가
+    def get(self, request):
+        return Response(UserSignupSerializer().data, status=status.HTTP_200_OK)
+
     def post(self, request, format=None):
         user = User.objects.all() #추가
         serializer = UserSignupSerializer(data=request.data, many=True)
@@ -21,6 +25,10 @@ class SignupView(APIView):
         return Response({'message' : '회원가입 실패', 'data': serializer.errors}, status=HTTP_400_BAD_REQUEST)
 
 class LoginView(APIView):
+    # 정보 조회 추가
+    def get(self, request):
+        return Response(UserLoginSerializer().data, status=status.HTTP_200_OK)
+
     def post(self, request):
         user = authenticate(
             userId=request.data.get("userId"), password=request.data.get("password")

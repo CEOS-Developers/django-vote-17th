@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from account.models import User
 from polls.models import teamPoll, partPoll
 from .serializers import TeamPollSerializer, PartPollSerializer
+from rest_framework.authentication import SessionAuthentication
 
 @api_view(['GET'])
 def team_poll_list(request):
@@ -14,6 +15,9 @@ def team_poll_list(request):
 
 @api_view(['POST'])
 def team_poll_vote(request):
+    authentication_classes = [SessionAuthentication]  # 인증 클래스 추가
+
+    user = request.user
     user = request.user
     if not user.is_authenticated:
         return Response({'detail': 'You must be logged in to vote.'}, status=status.HTTP_401_UNAUTHORIZED)
