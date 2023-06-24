@@ -178,4 +178,9 @@ cython_debug/
 #shell
 shell_commands.md
 
+#
+requirements.txt
+django_vote_17th/settings/dev.py
+
 # End of https://www.toptal.com/developers/gitignore/api/django
+
