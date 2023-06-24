@@ -14,7 +14,7 @@ services:
     ports:
       - "3307:3306"
     env_file:
-        - vote_toyproject/.env
+        - .env
     volumes:
       - dbdata:/var/lib/mysql
 
