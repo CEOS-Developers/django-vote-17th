@@ -25,14 +25,16 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         username = validated_data.get('username')
-        email = validated_data.get('email')
+        # email = validated_data.get('email')
+        userid = validated_data.get('userid')
         password = validated_data.get('password')
         part = validated_data.get('part')
         team = validated_data.get('team')
 
         user = User(
             username=username,
-            email=email,
+            # email=email,
+            userid=userid,
             part=part,
             team=team
         )

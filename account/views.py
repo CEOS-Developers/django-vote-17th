@@ -53,7 +53,8 @@ class LoginAPIView(APIView):
     @staticmethod
     def post(request):
         user = authenticate(
-            email=request.data.get("email"), password=request.data.get("password")
+            # email=request.data.get("email"), password=request.data.get("password")
+            userid=request.data.get("userid"), password=request.data.get("password")
         )
         if user is not None:
             serializer = UserSerializer(user)

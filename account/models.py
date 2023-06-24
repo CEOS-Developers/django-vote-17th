@@ -6,18 +6,53 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
+# class UserManager(BaseUserManager):
+#     def create_user(self, email, username, team, part, password=None):
+#         """
+#         주어진 이메일, 닉네임, 비밀번호 등 개인정보로 User 인스턴스 생성
+#
+#
+#         """
+#         if not email:
+#             raise ValueError(_('Users must have an email address'))
+#
+#         user = self.model(
+#             email=self.normalize_email(email),
+#             username=username,
+#             team=team,
+#             part=part,
+#         )
+#
+#         user.set_password(password)
+#         user.save(using=self._db)
+#         return user
+#
+#     def create_superuser(self, email, username, password):
+#         """
+#         주어진 이메일, 닉네임, 비밀번호 등 개인정보로 User 인스턴스 생성
+#         단, 최상위 사용자이므로 권한을 부여한다.
+#         """
+#         user = self.create_user(
+#             email=email,
+#             password=password,
+#             username=username,
+#         )
+#
+#         user.is_superuser = True
+#         user.save(using=self._db)
+#         return user
 class UserManager(BaseUserManager):
-    def create_user(self, email, username, team, part, password=None):
+    def create_user(self, userid, username, team, part, password=None):
         """
         주어진 이메일, 닉네임, 비밀번호 등 개인정보로 User 인스턴스 생성
 
 
         """
-        if not email:
-            raise ValueError(_('Users must have an email address'))
+        if not userid:
+            raise ValueError(_('Users must have an userid'))
 
         user = self.model(
-            email=self.normalize_email(email),
+            userid=userid,
             username=username,
             team=team,
             part=part,
@@ -27,13 +62,13 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, password):
+    def create_superuser(self, userid, username, password):
         """
         주어진 이메일, 닉네임, 비밀번호 등 개인정보로 User 인스턴스 생성
         단, 최상위 사용자이므로 권한을 부여한다.
         """
         user = self.create_user(
-            email=email,
+            userid=userid,
             password=password,
             username=username,
         )
@@ -45,8 +80,13 @@ class UserManager(BaseUserManager):
 
 # 계정 엔티티
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(
-        verbose_name=_('Email address'),
+    # email = models.EmailField(
+    #     verbose_name=_('Email address'),
+    #     max_length=255,
+    #     unique=True,
+    # )
+    userid = models.CharField(
+        verbose_name=_('Userid'),
         max_length=255,
         unique=True,
     )
@@ -67,7 +107,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
-    USERNAME_FIELD = 'email'
+    # USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'userid'
     REQUIRED_FIELDS = ['username', ]
 
     class Meta:
