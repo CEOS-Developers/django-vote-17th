@@ -155,12 +155,13 @@ SIMPLE_JWT = {
 
 # Swagger Authorization 설정
 SWAGGER_SETTINGS = {
-    'SECURITY_DEFINITIONS':{
-        'Bearer':{
-            'type':'apiKey',
-            'name':'Authorization',
-            'in':'header'
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
         }
-    }
+    },
+    'USE_SESSION_AUTH': False
 }
 
