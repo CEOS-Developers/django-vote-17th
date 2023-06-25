@@ -25,7 +25,7 @@ class DemoVoteAPIView(APIView):
     POST /polls/vote/demo/ : 투표를 한다 **토큰 인증 필요**
     GET /polls/vote/demo/ : 투표 선택지(팀 명단)을 불러온다
     """
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
 
     @staticmethod
@@ -78,7 +78,7 @@ class PartLeaderVoteAPIView(APIView):
     POST /polls/vote/part-leader/back-end
     >> 투표하기
     """
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     @staticmethod
     def get(request, part):
