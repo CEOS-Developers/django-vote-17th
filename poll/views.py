@@ -32,9 +32,9 @@ class DemoVoteAPIView(APIView):
     def post(request):
 
         poll = Poll.objects.get(name="데모데이 투표")
-        voter = User.objects.get(userid=request.data.get('voter')).pk
+        voter = User.objects.get(username=request.data.get('voter')).pk
         target_team = Team.objects.get(name=request.data.get('target_team')).pk
-        target_account = User.objects.get(userid=request.data.get('target_account')).pk
+        target_account = User.objects.get(username=request.data.get('target_account')).pk
 
         temp = request.data.copy()
         temp['poll'] = poll
