@@ -98,12 +98,12 @@ class PartLeaderVoteAPIView(APIView):
             return Response(status=400)
 
     @staticmethod
-    def post(request):
+    def post(request, part):
 
         poll = Poll.objects.get(name="파트장 투표")
-        voter = User.objects.get(userid=request.data.get('voter')).pk
+        voter = User.objects.get(username=request.data.get('voter')).pk
         target_team = Team.objects.get(name=request.data.get('target_team')).pk
-        target_account = User.objects.get(userid=request.data.get('target_account')).pk
+        target_account = User.objects.get(username=request.data.get('target_account')).pk
 
         temp = request.data.copy()
         temp['target_team'] = target_team
