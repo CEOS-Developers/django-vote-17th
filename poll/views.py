@@ -30,7 +30,14 @@ class DemoVoteAPIView(APIView):
     @staticmethod
     def post(request):
 
-        serializer = VoteSerializer(data=request.data)
+        target_team = Team.objects.get(name=request.data.get('target_team')).pk
+        target_account = User.objects.get(userid=request.data.get('target_account')).pk
+
+        temp = request.data.copy()
+        temp['target_team'] = target_team
+        temp['target_account'] = target_account
+
+        serializer = VoteSerializer(data=temp)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
@@ -86,8 +93,16 @@ class PartLeaderVoteAPIView(APIView):
             return Response(status=400)
 
     @staticmethod
-    def post(request, part):
-        serializer = VoteSerializer(data=request.data)
+    def post(request):
+
+        target_team = Team.objects.get(name=request.data.get('target_team')).pk
+        target_account = User.objects.get(userid=request.data.get('target_account')).pk
+
+        temp = request.data.copy()
+        temp['target_team'] = target_team
+        temp['target_account'] = target_account
+
+        serializer = VoteSerializer(data=temp)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
