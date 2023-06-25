@@ -15,7 +15,6 @@ class RegisterAPIView(APIView):
     @staticmethod
     def post(request):
         print(request.data)
-        # get prime key of 'team' = 'Repick'
         team = Team.objects.get(name=request.data.get('team')).pk
         part = Part.objects.get(name=request.data.get('part')).pk
 
