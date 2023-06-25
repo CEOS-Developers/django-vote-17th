@@ -30,6 +30,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         password = validated_data.get('password')
         part = validated_data.get('part')
         team = validated_data.get('team')
+        print(username, email, userid, password, part, team)
 
         user = User(
             username=username,

@@ -1,5 +1,5 @@
 from poll.models import Poll, Vote
-from poll.serializers import PollSerializer, VoteSerializer
+from poll.serializers import PollSerializer, VoteGetSerializer, VotePostSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from account.models import Team, User
@@ -30,19 +30,20 @@ class DemoVoteAPIView(APIView):
 
     @staticmethod
     def post(request):
-
         poll = Poll.objects.get(name="데모데이 투표")
-        voter = User.objects.get(username=request.data.get('voter')).pk
-        target_team = Team.objects.get(name=request.data.get('target_team')).pk
-        target_account = User.objects.get(username=request.data.get('target_account')).pk
+        voter = User.objects.get(username=request.data.get('voter'))
+        target_team = Team.objects.get(name=request.data.get('target_team'))
+        target_account = User.objects.get(username=request.data.get('target_account'))
 
         temp = request.data.copy()
-        temp['poll'] = poll
-        temp['voter'] = voter
-        temp['target_team'] = target_team
-        temp['target_account'] = target_account
-
-        serializer = VoteSerializer(data=temp)
+        print(temp)
+        temp['poll'] = poll.pk
+        temp['voter'] = voter.pk
+        temp['target_team'] = target_team.pk
+        temp['target_account'] = target_account.pk
+        print(temp.get('target_account'))
+        print(temp)
+        serializer = VotePostSerializer(data=temp)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
@@ -64,7 +65,7 @@ class DemoResultAPIView(APIView):
     @staticmethod
     def get(request):
         votes = Vote.objects.filter(poll__name="데모데이 투표")
-        serializer = VoteSerializer(votes, many=True)
+        serializer = VoteGetSerializer(votes, many=True)
 
         return Response(serializer.data)
 
@@ -100,7 +101,7 @@ class PartLeaderVoteAPIView(APIView):
     @staticmethod
     def post(request, part):
 
-        poll = Poll.objects.get(name="파트장 투표")
+        poll = Poll.objects.get(name="파트장 투표").pk
         voter = User.objects.get(username=request.data.get('voter')).pk
         target_team = Team.objects.get(name=request.data.get('target_team')).pk
         target_account = User.objects.get(username=request.data.get('target_account')).pk
@@ -111,7 +112,7 @@ class PartLeaderVoteAPIView(APIView):
         temp['poll'] = poll
         temp['voter'] = voter
 
-        serializer = VoteSerializer(data=temp)
+        serializer = VotePostSerializer(data=temp)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
@@ -133,13 +134,13 @@ class PartLeaderResultAPIView(APIView):
             votes = Vote.objects.filter(poll__name="파트장 투표")
             # 투표자 중 front-end 파트인 사람들만 가져옴
             votes = votes.filter(target_account__part__name="Frontend")
-            serializer = VoteSerializer(votes, many=True)
+            serializer = VoteGetSerializer(votes, many=True)
             return Response(serializer.data)
         elif part == "back-end":
             votes = Vote.objects.filter(poll__name="파트장 투표")
             # 투표자 중 back-end 파트인 사람들만 가져옴
             votes = votes.filter(target_account__part__name="Backend")
-            serializer = VoteSerializer(votes, many=True)
+            serializer = VoteGetSerializer(votes, many=True)
             return Response(serializer.data)
         else:
             return Response(status=400)
