@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from account.models import Team, User
 from account.serializers import UserSerializer, TeamSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
 
 
 class PollAPIView(APIView):
@@ -127,10 +128,30 @@ class PartLeaderResultAPIView(APIView):
             serializer = VoteSerializer(votes, many=True)
             return Response(serializer.data)
         elif part == "back-end":
-            votes = Vote.objects.filter(poll="파트장 투표")
+            votes = Vote.objects.filter(poll__name="파트장 투표")
             # 투표자 중 back-end 파트인 사람들만 가져옴
             votes = votes.filter(target_account__part__name="Backend")
             serializer = VoteSerializer(votes, many=True)
             return Response(serializer.data)
         else:
             return Response(status=400)
+
+class CheckVoteAPIView(APIView):
+    @staticmethod
+    def get(request, userid):
+        try:
+            # 파트장 투표 여부
+            has_voted_part = Vote.objects.filter(voter__userid=userid, poll__name="파트장 투표").exists()
+            # 데모데이 투표 여부
+            has_voted_demo = Vote.objects.filter(voter__userid=userid, poll__name="데모데이 투표").exists()
+
+            res = Response(
+                {
+                    "has_voted_part": has_voted_part,
+                    "has_voted_demo": has_voted_demo,
+                },
+                status=status.HTTP_200_OK
+            )
+            return res
+        except:
+            return Response(status=status.HTTP_400_BAD_REQUEST)

@@ -8,4 +8,5 @@ urlpatterns = [
     # TODO : PartLeaderAPIView 관련 path 구현
     path('vote/part-leader/<str:part>/', views.PartLeaderVoteAPIView.as_view()),
     path('part-leader/<str:part>/', views.PartLeaderResultAPIView.as_view()),
+    path('vote-history/<str:userid>/', views.CheckVoteAPIView.as_view()),
 ]
