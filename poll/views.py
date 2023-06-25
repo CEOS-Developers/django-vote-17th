@@ -33,14 +33,12 @@ class DemoVoteAPIView(APIView):
         poll = Poll.objects.get(name="데모데이 투표")
         voter = User.objects.get(username=request.data.get('voter'))
         target_team = Team.objects.get(name=request.data.get('target_team'))
-        target_account = User.objects.get(username=request.data.get('target_account'))
 
         temp = request.data.copy()
         print(temp)
         temp['poll'] = poll.pk
         temp['voter'] = voter.pk
         temp['target_team'] = target_team.pk
-        temp['target_account'] = target_account.pk
         print(temp.get('target_account'))
         print(temp)
         serializer = VotePostSerializer(data=temp)
@@ -103,11 +101,9 @@ class PartLeaderVoteAPIView(APIView):
 
         poll = Poll.objects.get(name="파트장 투표").pk
         voter = User.objects.get(username=request.data.get('voter')).pk
-        target_team = Team.objects.get(name=request.data.get('target_team')).pk
         target_account = User.objects.get(username=request.data.get('target_account')).pk
 
         temp = request.data.copy()
-        temp['target_team'] = target_team
         temp['target_account'] = target_account
         temp['poll'] = poll
         temp['voter'] = voter
