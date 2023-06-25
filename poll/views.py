@@ -62,10 +62,13 @@ class DemoResultAPIView(APIView):
     """
     @staticmethod
     def get(request):
+        print("demo")
+        teams = Team.objects.all()
         votes = Vote.objects.filter(poll__name="데모데이 투표")
-        serializer = VoteGetSerializer(votes, many=True)
-
-        return Response(serializer.data)
+        arr = []
+        for each in teams:
+            arr.append([each.name, len(votes.filter(target_team__name=each.name))])
+        return Response(arr)
 
 
 # TODO : PartLeaderAPIView 구현
@@ -127,17 +130,27 @@ class PartLeaderResultAPIView(APIView):
     @staticmethod
     def get(request, part):
         if part == "front-end":
+            print("front-end")
+            # 프론트엔드 유저 가져옴
+            users = User.objects.filter(part__name="Frontend")
             votes = Vote.objects.filter(poll__name="파트장 투표")
             # 투표자 중 front-end 파트인 사람들만 가져옴
             votes = votes.filter(target_account__part__name="Frontend")
-            serializer = VoteGetSerializer(votes, many=True)
-            return Response(serializer.data)
+            arr = []
+            for each in users:
+                arr.append([each.username, len(votes.filter(target_account__username=each.username))])
+            return Response(arr)
         elif part == "back-end":
+            print("back-end")
+            # 프론트엔드 유저 가져옴
+            users = User.objects.filter(part__name="Backend")
             votes = Vote.objects.filter(poll__name="파트장 투표")
-            # 투표자 중 back-end 파트인 사람들만 가져옴
+            # 투표자 중 front-end 파트인 사람들만 가져옴
             votes = votes.filter(target_account__part__name="Backend")
-            serializer = VoteGetSerializer(votes, many=True)
-            return Response(serializer.data)
+            arr = []
+            for each in users:
+                arr.append([each.username, len(votes.filter(target_account__username=each.username))])
+            return Response(arr)
         else:
             return Response(status=400)
 

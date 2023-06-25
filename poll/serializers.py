@@ -20,7 +20,6 @@ class VoteGetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Vote
-        depth = 1
         fields = '__all__'
 
     def create(self, validated_data):
