@@ -138,7 +138,7 @@ class PartLeaderResultAPIView(APIView):
             votes = votes.filter(target_account__part__name="Frontend")
             arr = []
             for each in users:
-                arr.append([each.username, len(votes.filter(target_account__username=each.username))])
+                arr.append([each.username, each.team.name, len(votes.filter(target_account__username=each.username))])
             return Response(arr)
         elif part == "back-end":
             print("back-end")
