@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/django.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/django.yml" afterDir="false" />
     </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <list id="f334c2a7-77e7-4baa-96de-b94adab6002d" name="Changes by 이소정" comment="">
@@ -98,7 +97,7 @@
       <workItem from="1687745171812" duration="302000" />
       <workItem from="1687745518266" duration="1187000" />
       <workItem from="1687747395598" duration="92000" />
-      <workItem from="1687748959503" duration="5823000" />
+      <workItem from="1687748959503" duration="6122000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -306,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687754204187</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="workflow 삭제">
+      <option name="closed" value="true" />
+      <created>1687755455153</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1687755455153</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +332,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix push error 해결" />
     <MESSAGE value="code recover" />
     <MESSAGE value="test" />
     <MESSAGE value="add apps" />
@@ -350,6 +356,7 @@
     <MESSAGE value="postman API test까지 성공 꺄아아아아아아아 (10시간동안 소정언니랑 무한에러 고치기 헤헤 ... ) ^___^" />
     <MESSAGE value=".env.prod 및 migrate 오류 해결" />
     <MESSAGE value="github action test" />
-    <option name="LAST_COMMIT_MESSAGE" value="github action test" />
+    <MESSAGE value="workflow 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="workflow 삭제" />
   </component>
 </project>
