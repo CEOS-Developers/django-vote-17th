@@ -71,4 +71,4 @@ https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
 
 2023년 6월 30일
 
-github change
+- jaeryeong, sojung
