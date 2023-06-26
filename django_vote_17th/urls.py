@@ -32,6 +32,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Django Vote 17th API Document",
         default_version="1.0.0",
+        url="https://takgyun.shop/",
         description="17th Dansupport BE&FE 합동 스터디",
     ),
     public=True,
