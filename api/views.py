@@ -1,3 +1,4 @@
+import jwt
 from django.shortcuts import render
 import logging
 from django.contrib.auth.hashers import check_password
@@ -7,8 +8,11 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from api.serializers import *
+from django_vote_17th import settings
+from django_vote_17th.settings import SECRET_KEY
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -133,7 +137,6 @@ class SignOut(APIView):
     )
     def post(self, request):
         if request.user is not None:
-            print(request.user)
             response = Response(
                 {"code": 200, "message": "로그아웃 성공"}, status=status.HTTP_200_OK
             )
@@ -192,6 +195,79 @@ class EmailCheck(APIView):
             )
 
         return response
+
+
+class TokenRefreshView(APIView):
+
+    @swagger_auto_schema(
+        tags=["auth"],
+        operation_summary="token refresh",
+        responses={
+            201: openapi.Response(
+                description="HTTP_201",
+                schema=openapi.Schema(
+                    type=openapi.TYPE_OBJECT,
+                    properties={
+                        'code': openapi.Schema(type=openapi.TYPE_INTEGER, description="HTTP Code"),
+                        'messages': openapi.Schema(type=openapi.TYPE_STRING, description="Messages"),
+                        'access_token': openapi.Schema(type=openapi.TYPE_STRING, description="Access Token"),
+                        'user': openapi.Schema(type=openapi.TYPE_OBJECT, description="User",
+                                               properties={
+                                                   'name': openapi.Schema(type=openapi.TYPE_STRING,
+                                                                          description="User Name"),
+                                                   'part': openapi.Schema(type=openapi.TYPE_STRING,
+                                                                          description="User Part"),
+                                                   'team': openapi.Schema(type=openapi.TYPE_STRING,
+                                                                          description="User Team"),
+                                               }
+                                               )
+                    }
+                )
+            ),
+            400: ResponseSerializer
+        }
+    )
+    def post(self, request):
+        refresh = request.COOKIES['refresh_token']
+
+        if refresh is None:
+            return Response(
+                {"code": 400, "message": "refresh token이 존재하지 않습니다"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            payload = jwt.decode(
+                refresh, SECRET_KEY, algorithms=['HS256']
+            )
+        except:
+            return Response(
+                {"code": 400, "message": "refresh token 만료"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        print(payload)
+        user = User.objects.get(id=payload['user_id'])
+
+        if user is None:
+            return Response(
+                {"code": 400, "message": "refresh token 만료"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        token = TokenObtainPairSerializer.get_token(user)
+        access_token = str(token.access_token)
+
+        return Response(
+                {
+                    "code": 200,
+                    "messages": "access token 재발급",
+                    "access_token": access_token,
+                    "user": {
+                        "name": user.name,
+                        "part": user.part,
+                        "team": user.team
+                    }
+                },
+                status=status.HTTP_200_OK
+            )
 
 
 class DemoVoteAuthority(APIView):

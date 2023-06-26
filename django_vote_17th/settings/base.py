@@ -18,7 +18,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -176,7 +176,8 @@ CORS_ORIGIN_WHITELIST = (
     "https://takgyun.store",
     "https://www.takgyun.store",
     "http://localhost:3000",
-    "http://127.0.0.1:8000"
+    "http://127.0.0.1:8000",
+    "http://127.0.0.1"
 )
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
