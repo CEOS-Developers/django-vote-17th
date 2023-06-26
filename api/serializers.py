@@ -68,7 +68,7 @@ class CandidateVoteRequestSerializer(serializers.ModelSerializer):
 class DemoVoteResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['tname', 'count']
+        fields = ['tname', 'detail', 'count']
 
 
 class CandidateVoteResponseSerializer(serializers.ModelSerializer):
