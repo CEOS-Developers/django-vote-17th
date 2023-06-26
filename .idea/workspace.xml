@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/.env.prod" afterDir="false" />
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment=".env.prod 및 migrate 오류 해결">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/migrations/0002_auto_20230624_0202.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/polls/migrations/0003_alter_partpoll_candidate.py" beforeDir="false" />
     </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
-    <list id="f334c2a7-77e7-4baa-96de-b94adab6002d" name="Changes by 이소정" comment="" />
+    <list id="f334c2a7-77e7-4baa-96de-b94adab6002d" name="Changes by 이소정" comment="">
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +97,7 @@
       <workItem from="1687745171812" duration="302000" />
       <workItem from="1687745518266" duration="1187000" />
       <workItem from="1687747395598" duration="92000" />
-      <workItem from="1687748959503" duration="2921000" />
+      <workItem from="1687748959503" duration="4509000" />
     </task>
     <task id="LOCAL-00001" summary="init branch 생성">
       <created>1685894837107</created>
@@ -284,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687539318351</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary=".env.prod 및 migrate 오류 해결">
+      <option name="closed" value="true" />
+      <created>1687752147493</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1687752147493</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +308,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init branch 생성" />
     <MESSAGE value="add account, settings.py 재령소정" />
     <MESSAGE value="fix push error 해결" />
     <MESSAGE value="code recover" />
@@ -328,6 +332,7 @@
     <MESSAGE value="add manage.py, polls앱에 views.py, urls.py에 추가" />
     <MESSAGE value="commit" />
     <MESSAGE value="postman API test까지 성공 꺄아아아아아아아 (10시간동안 소정언니랑 무한에러 고치기 헤헤 ... ) ^___^" />
-    <option name="LAST_COMMIT_MESSAGE" value="postman API test까지 성공 꺄아아아아아아아 (10시간동안 소정언니랑 무한에러 고치기 헤헤 ... ) ^___^" />
+    <MESSAGE value=".env.prod 및 migrate 오류 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value=".env.prod 및 migrate 오류 해결" />
   </component>
 </project>
