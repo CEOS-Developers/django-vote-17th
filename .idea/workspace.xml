@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="" />
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="fix env.prod">
+      <change beforePath="$PROJECT_DIR$/config/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/models.py" afterDir="false" />
+    </list>
     <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
     <list id="f334c2a7-77e7-4baa-96de-b94adab6002d" name="Changes by 이소정" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -338,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687756311051</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix env.prod">
+      <created>1687783837102</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1687783837102</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +367,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add apps" />
     <MESSAGE value="add account" />
     <MESSAGE value="add settings" />
     <MESSAGE value="add settings (maybe)" />
@@ -382,6 +391,7 @@
     <MESSAGE value="workflow 삭제" />
     <MESSAGE value="[add] deploy.yml" />
     <MESSAGE value="workflow test" />
-    <option name="LAST_COMMIT_MESSAGE" value="workflow test" />
+    <MESSAGE value="fix env.prod" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix env.prod" />
   </component>
 </project>
