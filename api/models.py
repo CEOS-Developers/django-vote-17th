@@ -59,9 +59,9 @@ class User(AbstractBaseUser, BaseTimeModel, PermissionsMixin):
 
     TEAM_CHOICES = [
         ('댄서포트', 'Dansupport'),
-        ('REPICK', 'Repick'),
-        ('THERAPEASE','TherapEase'),
-        ('HOOKING', 'Hooking'),
+        ('Repick', 'Repick'),
+        ('TherapEase','TherapEase'),
+        ('Hooking', 'Hooking'),
         ('바리바리', 'BariBari')
     ]
 
@@ -93,6 +93,7 @@ class Team(BaseTimeModel):
     ]
 
     tname = models.CharField(max_length=30, choices=TEAM_CHOICES, unique=True)
+    detail = models.CharField(max_length=255)
     count = models.IntegerField(default=0, null=True)
 
     def __str__(self):
