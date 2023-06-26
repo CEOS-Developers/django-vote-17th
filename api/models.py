@@ -59,9 +59,9 @@ class User(AbstractBaseUser, BaseTimeModel, PermissionsMixin):
 
     TEAM_CHOICES = [
         ('댄서포트', 'Dansupport'),
-        ('REPICK', 'Repick'),
-        ('THERAPEASE','TherapEase'),
-        ('HOOKING', 'Hooking'),
+        ('RePicK', 'Repick'),
+        ('TherapEase','TherapEase'),
+        ('Hooking', 'Hooking'),
         ('바리바리', 'BariBari')
     ]
 
@@ -86,9 +86,9 @@ class Team(BaseTimeModel):
 
     TEAM_CHOICES = [
         ('댄서포트', 'Dansupport'),
-        ('REPICK', 'Repick'),
-        ('THERAPEASE', 'TherapEase'),
-        ('HOOKING', 'Hooking'),
+        ('Repick', 'Repick'),
+        ('TherapEase', 'TherapEase'),
+        ('Hooking', 'Hooking'),
         ('바리바리', 'BariBari')
     ]
 
