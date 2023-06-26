@@ -49,11 +49,13 @@ class LoginView(APIView):
         user = User.objects.get(user_id=user_id)
         team=user.team
         part=user.part
+        username = user.name
 
         response = Response({
             "user_id": user_id,
             "team": team,
             "part": part,
+            "name": username,
             "token": {
                 "access_token": access_token,
             }},
