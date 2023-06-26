@@ -51,3 +51,5 @@ class partPoll(models.Model):
     candidate = models.CharField(max_length=10, choices=candidatesChoices)
     def __str__(self):
         return self.candidate
+
+    ##
