@@ -135,7 +135,7 @@ class SignOut(APIView):
             400: ResponseSerializer
         }
     )
-    def post(self, request):
+    def get(self, request):
         if request.user is not None:
             response = Response(
                 {"code": 200, "message": "로그아웃 성공"}, status=status.HTTP_200_OK
@@ -282,7 +282,7 @@ class DemoVoteAuthority(APIView):
             401: ResponseSerializer
         }
     )
-    def post(self, request):
+    def get(self, request):
         if request.user.isDemoVoted is False:
             response = Response(
                 {"code": 200, "message": "투표 권한 존재"}, status=status.HTTP_200_OK
@@ -310,7 +310,7 @@ class CandiVoteAuthority(APIView):
             401: ResponseSerializer
         }
     )
-    def post(self, request):
+    def get(self, request):
         if request.user.isCandiVoted is False:
             response = Response(
                 {"code": 200, "message": "투표 권한 존재"}, status=status.HTTP_200_OK
