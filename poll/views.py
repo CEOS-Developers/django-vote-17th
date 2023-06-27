@@ -149,7 +149,7 @@ class PartLeaderResultAPIView(APIView):
             votes = votes.filter(target_account__part__name="Backend")
             arr = []
             for each in users:
-                arr.append([each.username, len(votes.filter(target_account__username=each.username))])
+                arr.append([each.username, each.team.name, len(votes.filter(target_account__username=each.username))])
             return Response(arr)
         else:
             return Response(status=400)
