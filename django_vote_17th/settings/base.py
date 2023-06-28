@@ -178,7 +178,8 @@ CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",
     "http://127.0.0.1:8000",
     "http://127.0.0.1",
-    "https://react-vote-17th-bdb5.vercel.app"
+    "https://react-vote-17th-bdb5.vercel.app",
+    "https://react-vote-17th-2fn04yu0s-dansupport.vercel.app"
 )
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
