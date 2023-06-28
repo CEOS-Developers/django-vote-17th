@@ -116,7 +116,7 @@ class SignIn(APIView):
             )
 
             # response.set_cookie("access_token", access_token, httponly=True)
-            response.set_cookie("refresh_token", refresh_token, httponly=True)
+            response.set_cookie("refresh_token", refresh_token, httponly=True, domain="takgyun.store", path="/")
             return response
         else:
             return Response(
@@ -227,7 +227,7 @@ class TokenRefreshView(APIView):
             400: ResponseSerializer
         }
     )
-    def post(self, request):
+    def get(self, request):
         refresh = request.COOKIES['refresh_token']
 
         if refresh is None:
