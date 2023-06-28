@@ -177,7 +177,8 @@ CORS_ORIGIN_WHITELIST = (
     "https://www.takgyun.store",
     "http://localhost:3000",
     "http://127.0.0.1:8000",
-    "http://127.0.0.1"
+    "http://127.0.0.1",
+    "https://react-vote-17th-bdb5.vercel.app"
 )
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
