@@ -1,6 +1,4 @@
 import jwt
-from django.shortcuts import render
-import logging
 from django.contrib.auth.hashers import check_password
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
@@ -8,14 +6,9 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from api.serializers import *
-from django_vote_17th import settings
 from django_vote_17th.settings import SECRET_KEY
-
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)
 
 
 class SignUp(APIView):
@@ -244,7 +237,6 @@ class TokenRefreshView(APIView):
                 {"code": 400, "message": "refresh token 만료"}, status=status.HTTP_400_BAD_REQUEST
             )
 
-        print(payload)
         user = User.objects.get(id=payload['user_id'])
 
         if user is None:
@@ -402,8 +394,7 @@ class DemoVoteAPIView(APIView):
     )
     def post(self, request):
         tname = request.data['tname']
-        print(tname)
-        print(request.user.team)
+
         if request.user.team == tname:
             response = Response(
                 {"code": 400, "message": "소속된 팀에는 투표하실 수 없습니다."}, status=status.HTTP_400_BAD_REQUEST
