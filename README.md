@@ -36,6 +36,8 @@ https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
     
 - **파트**는 (프론트엔드, 백엔드) 중 하나를 선택할 수 있게 해주시면 됩니다.
 - **팀**은 (RePick, 바리바리, Hooking, Dansupport, TherapEse) 중 하나를 선택할 수 있게 해주시면 됩니다.
+![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/33eb520c-2fd1-49d9-aa3a-e37d328a6c45)
+
 
 ### 3. 투표
 
