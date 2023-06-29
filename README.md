@@ -37,6 +37,7 @@ https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
 - **파트**는 (프론트엔드, 백엔드) 중 하나를 선택할 수 있게 해주시면 됩니다.
 - **팀**은 (RePick, 바리바리, Hooking, Dansupport, TherapEse) 중 하나를 선택할 수 있게 해주시면 됩니다.
 ![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/33eb520c-2fd1-49d9-aa3a-e37d328a6c45)
+![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/8723970c-ae51-4297-8f21-c78fc098f619)
 
 
 ### 3. 투표
@@ -46,6 +47,9 @@ https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
 - 로그인하지 않은 사용자는 투표 페이지에 접근할 수는 있되, 투표는 불가능합니다.
 - **파트장 투표** : 본인의 파트에 해당하는 파트장 투표만 할 수 있습니다.
 - **데모데이 투표** : 본인이 속한 팀을 제외하고 투표를 할 수 있습니다.
+![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/beccc477-12d6-43d4-902f-8079bf3fcd34)
+![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/9eb2bab0-5272-49ec-91ba-91e98f8f94f7)
+
 
 ### 4. 기타
 
