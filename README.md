@@ -6,7 +6,7 @@
 ![image](https://github.com/Hooking-CEOS/Hooking_BE/assets/81136546/638fbf23-20c9-4bb4-a563-ca82b050888b)
 
 ### 데이터셋
-```json
+```mysql
 insert into vote_team(created_at, updated_at, team, vote_cnt) values ("2023-06-15","2023-06-15","RePick",0);
 insert into vote_team(created_at, updated_at, team, vote_cnt) values ("2023-06-15","2023-06-15","바리바리",0);
 insert into vote_team(created_at, updated_at, team, vote_cnt) values ("2023-06-15","2023-06-15","Hooking",0);
