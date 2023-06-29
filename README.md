@@ -49,6 +49,7 @@ https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
 - **데모데이 투표** : 본인이 속한 팀을 제외하고 투표를 할 수 있습니다.
 ![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/beccc477-12d6-43d4-902f-8079bf3fcd34)
 ![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/9eb2bab0-5272-49ec-91ba-91e98f8f94f7)
+![image](https://github.com/TherapEase-CEOS/django-vote-17th/assets/90204371/25404223-cfad-466e-a46b-8e3daefb9fa8)
 
 
 ### 4. 기타
