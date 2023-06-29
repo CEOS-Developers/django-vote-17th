@@ -25,6 +25,8 @@ https://www.notion.so/Toy-project-API-1939a4b8dde146018f30ee35ba8e9777?pvs=4
 - 아이디 혹은 비밀번호가 틀렸을 시에는 에러를 반환합니다.
 - (Optional) 로그아웃 기능
 - [참고자료](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
+- ![img.png](img.png) 
+- local postman test
 
 ### 2. 회원가입
 
