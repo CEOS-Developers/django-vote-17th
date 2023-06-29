@@ -74,7 +74,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_vote_17th.urls'
-CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000' ,'http://localhost:3000','http://hooking.shop','https://hooking.shop','http://hooking.shop:80','https://hooking.shop:80']
+CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000' ,'http://localhost:3000','http://hooking.shop','https://hooking.shop','http://hooking.shop:80','https://hooking.shop:80', 'https://hooking-vote.netlify.app/']
 CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
