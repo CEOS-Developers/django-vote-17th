@@ -109,7 +109,7 @@ class SignIn(APIView):
             )
 
             # response.set_cookie("access_token", access_token, httponly=True)
-            response.set_cookie("refresh_token", refresh_token)
+            response.set_cookie("refresh_token", refresh_token, httponly=False, secure=True)
 
             return response
         else:
