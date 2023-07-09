@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <list id="83f6ac29-a10c-4da1-b0e4-8469eef80346" name="Changes by hyunwookim" comment="" />
+    <list id="e9d629a4-9e54-418f-aa16-690fbe9a62ab" name="Changes by jrjwj" comment="" />
+    <list id="f334c2a7-77e7-4baa-96de-b94adab6002d" name="Changes by 이소정" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QkOh5Z1pi715Zo3maoAgceXH75" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/project/django-vote-17th/account&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\django-vote-17th\account" />
+      <recent name="C:\Users\이소정\PycharmProjects\django-vote-17th" />
+      <recent name="C:\project\django-vote-17th" />
+      <recent name="C:\project\django-vote-17th\vote_toyproject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\이소정\PycharmProjects\django-vote-17th" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\jrjwj\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc44db9f-5b20-4ad5-ad75-cbd67f44ef52" name="Changes" comment="" />
+      <created>1685894229578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685894229578</updated>
+      <workItem from="1685894235072" duration="830000" />
+      <workItem from="1685895229521" duration="208000" />
+      <workItem from="1685895499729" duration="3823000" />
+      <workItem from="1687156633111" duration="2959000" />
+      <workItem from="1687276909782" duration="6668000" />
+      <workItem from="1687347233996" duration="14809000" />
+      <workItem from="1687494550076" duration="3342000" />
+      <workItem from="1687498183706" duration="4821000" />
+      <workItem from="1687568757932" duration="1201000" />
+      <workItem from="1687578600038" duration="3596000" />
+      <workItem from="1687744725219" duration="441000" />
+      <workItem from="1687745171812" duration="302000" />
+      <workItem from="1687745518266" duration="1187000" />
+      <workItem from="1687747395598" duration="92000" />
+      <workItem from="1687748959503" duration="6886000" />
+    </task>
+    <task id="LOCAL-00001" summary="init branch 생성">
+      <created>1685894837107</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685894837110</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add account, settings.py 재령소정">
+      <created>1685899364771</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685899364771</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix push error 해결">
+      <created>1687018178770</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687018178770</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix push error 해결">
+      <created>1687161564061</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687161564061</updated>
+    </task>
+    <task id="LOCAL-00005" summary="code recover">
+      <created>1687161918291</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687161918291</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test">
+      <created>1687276948309</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687276948309</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add apps">
+      <created>1687328863882</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687328863882</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add account">
+      <created>1687329107789</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687329107789</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add settings (maybe)">
+      <created>1687329470726</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687329470726</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test dir">
+      <created>1687339018543</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687339018543</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add account models.py">
+      <created>1687349420835</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687349420835</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix account serializers.py">
+      <created>1687350105097</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687350105097</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix account urls.py, views.py">
+      <created>1687352762259</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687352762259</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add inital settings">
+      <created>1687358513503</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687358513503</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add base.py">
+      <created>1687359029288</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687359029288</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add polls model.py">
+      <created>1687362632108</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687362632108</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add serializers.py, urls.py files @ polls">
+      <created>1687362767726</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687362767726</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add polls outline">
+      <created>1687363905010</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687363905010</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix gitignore">
+      <created>1687410415370</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687410415370</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix gitignore">
+      <created>1687410538978</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687410538978</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add cors headers">
+      <created>1687442763944</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1687442763944</updated>
+    </task>
+    <task id="LOCAL-00022" summary="add polls models.py, serializers.py">
+      <created>1687444897382</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1687444897383</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add gitignore">
+      <created>1687495274667</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1687495274668</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add manage.py, polls앱에 views.py, urls.py에 추가">
+      <created>1687498579877</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687498579877</updated>
+    </task>
+    <task id="LOCAL-00025" summary="commit">
+      <created>1687512790541</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1687512790542</updated>
+    </task>
+    <task id="LOCAL-00026" summary="postman API test까지 성공 꺄아아아아아아아 (10시간동안 소정언니랑 무한에러 고치기 헤헤 ... ) ^___^">
+      <created>1687539318351</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1687539318351</updated>
+    </task>
+    <task id="LOCAL-00027" summary=".env.prod 및 migrate 오류 해결">
+      <option name="closed" value="true" />
+      <created>1687752147493</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1687752147493</updated>
+    </task>
+    <task id="LOCAL-00028" summary="github action test">
+      <option name="closed" value="true" />
+      <created>1687753993397</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1687753993397</updated>
+    </task>
+    <task id="LOCAL-00029" summary="github action test">
+      <option name="closed" value="true" />
+      <created>1687754204187</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687754204187</updated>
+    </task>
+    <task id="LOCAL-00030" summary="workflow 삭제">
+      <option name="closed" value="true" />
+      <created>1687755455153</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1687755455153</updated>
+    </task>
+    <task id="LOCAL-00031" summary="[add] deploy.yml">
+      <option name="closed" value="true" />
+      <created>1687755871517</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1687755871517</updated>
+    </task>
+    <task id="LOCAL-00032" summary="workflow test">
+      <option name="closed" value="true" />
+      <created>1687756120385</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1687756120385</updated>
+    </task>
+    <task id="LOCAL-00033" summary="workflow test">
+      <option name="closed" value="true" />
+      <created>1687756311051</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1687756311051</updated>
+    </task>
+    <task id="LOCAL-00034" summary="compose">
+      <option name="closed" value="true" />
+      <created>1687796951411</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1687796951411</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add account" />
+    <MESSAGE value="add settings" />
+    <MESSAGE value="add settings (maybe)" />
+    <MESSAGE value="test dir" />
+    <MESSAGE value="add account models.py" />
+    <MESSAGE value="fix account serializers.py" />
+    <MESSAGE value="fix account urls.py, views.py" />
+    <MESSAGE value="add inital settings" />
+    <MESSAGE value="add base.py" />
+    <MESSAGE value="add polls model.py" />
+    <MESSAGE value="add serializers.py, urls.py files @ polls" />
+    <MESSAGE value="add polls outline" />
+    <MESSAGE value="fix gitignore" />
+    <MESSAGE value="add cors headers" />
+    <MESSAGE value="add polls models.py, serializers.py" />
+    <MESSAGE value="add gitignore" />
+    <MESSAGE value="add manage.py, polls앱에 views.py, urls.py에 추가" />
+    <MESSAGE value="commit" />
+    <MESSAGE value="postman API test까지 성공 꺄아아아아아아아 (10시간동안 소정언니랑 무한에러 고치기 헤헤 ... ) ^___^" />
+    <MESSAGE value=".env.prod 및 migrate 오류 해결" />
+    <MESSAGE value="github action test" />
+    <MESSAGE value="workflow 삭제" />
+    <MESSAGE value="[add] deploy.yml" />
+    <MESSAGE value="workflow test" />
+    <MESSAGE value="compose" />
+    <option name="LAST_COMMIT_MESSAGE" value="compose" />
+  </component>
+</project>
